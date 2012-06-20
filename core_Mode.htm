@@ -1,0 +1,376 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head>
+    <title></title>
+    <style>﻿.TAB1{
+    display:inline-block; width:30px;
+}
+body
+{
+}
+.header{height: auto;width: 100%;}
+
+#main{height: auto;}
+
+.TOP{
+    display:inline;
+    position:relative;
+    padding: 0 6px 0 6px;
+    width:120px;
+    height:12px;
+    background-image:url(TOP.png);
+    background-position:right center;
+    background-repeat:no-repeat;
+    top:-2px;
+    margin-left:14px;
+    text-decoration:none;
+}
+.scode{
+    display:inline;
+    position:relative;
+    color:Black;
+    font-size:medium;
+    font-style:normal;
+    text-decoration:underline;
+}
+.contents{
+    padding: 6px 12px 6px 12px;
+    margin: 10px 20px 10px 20px;
+    background-color: #FFFFEA;
+    border: solid 1px Silver;
+    font-size: medium;
+}
+.code,.codeline{
+    background-color: #CCFFFF;
+    border:solid 1px Silver;
+}
+.code{
+    font-size: medium;
+    padding: 6px 12px 6px 12px;
+    margin: 10px 20px 10px 20px;
+    font-family:COURIER;
+}
+.codeline{
+    display :inline-block;
+    padding: 4px 12px 4px 12px;
+    margin:0,0,0,0;
+}
+.subTopic{
+    font-size: 14pt;
+    font-weight: bold;
+}
+.topic{
+    font-size: 24pt;
+    font-weight: bold;
+}
+.word{
+    font-weight: bold;
+}
+.code .keyword{
+    color: #0033CC;
+    font-weight: bolder;
+}
+.code .op{
+    color: #0033CC;
+    font-weight: bolder;
+}
+.code .comma{
+    font-weight: bold;
+    margin-right: 6px;
+    margin-left: 6px;
+    font-family: Courier;
+}
+.code .scol{
+    color: #0033CC;
+    font-weight: bold;
+}
+.commentLine{
+    color: #009900;
+    font-size:medium;
+    font-weight:normal;
+}
+.code .str{
+    color: #CC0000;
+}
+.code .colon{
+    color: #0000FF;
+    font-weight: 900;
+    font-size: large;
+}
+.code .optionalArgs{
+    background-color: #FFFF99;
+}
+.code .vari{
+    color: #CC00FF;
+}
+.comments{
+    margin: 18px 8px 6px 8px;
+    position: relative;
+    padding: 6px;
+    background-color: #F0F0F0;
+    top: 0px;
+    left: 1px;
+}
+
+ul.UL{
+
+}
+
+/*ul.UL > li > span > .title{*/
+ul.UL > li .title{
+    font-size: large;
+    font-weight: bold;
+}
+
+.header .help{
+    position: absolute;
+    width: auto;
+    height: auto;
+    top: 4px;
+    left: 8px;
+    color:Red;
+    /*text-decoration:blink;*/
+    text-align:left;
+    font-size:large;
+}
+.header .copyright{
+    position: absolute;
+    width: auto;
+    height: auto;
+    top: 14px;
+    right: 8px;
+    text-align: right;
+    font-size:larger;
+}
+.header .website{
+    position: absolute;
+    width: auto;
+    height: auto;
+    top: -12px;
+    right: 8px;
+    text-align: right;
+    font-size:larger;
+}
+.header .titleLinks{
+    margin-top: -4px;
+    text-align: center;
+    font-size: x-large;
+}
+.header .slogan{
+    margin-top: -22px;
+    text-align: center;
+    font-size: large;
+}
+.header .HR{
+    margin-top: -12px;
+}
+.dollar{color: #E67300;}
+
+.int{color:Green}
+
+.table {
+    position:relative;
+    width: 100%;
+    left:20px;
+    border-color:Black;
+    border-style: double;
+    border-width: 2px;
+}
+
+.table tr {}
+
+.table tr td {
+    border-bottom-width: 1px;
+    border-bottom-style:dashed;
+}
+.table tr td.header {
+    border-bottom-width: 2px;
+    border-bottom-style: double;
+    text-align:center;
+    font-weight:bold;
+}
+.table tr td.name { 
+    padding-left:12px;
+    font-size: medium;
+    font-family:COURIER;
+}
+.table tr td.result {
+    text-align:center;
+    font-weight:bolder;
+    border-color:Black;
+}
+.table tr td.result.error{color:Red;}
+.table tr td.result.good{color:Green;}
+
+
+
+
+
+
+</style>
+</head>
+<body id="TOP">
+    <div id="header" class="header">
+        <p class="titleLinks">
+            <a href="Contents.htm">Pops Documentatin</a>
+            <span> : </span> 
+            <a href="core.htm">core</a>
+            <span> : </span> 
+            <a href="core_Mode.htm">Mode</a>
+        </p>
+        <p class="slogan">A Framework For Node.JS</p>
+        <a class="help" href="help.htm">help</a>
+        <div class="website"><p><a href="https://sites.google.com/site/popsnode/">Pops Website</a></p></div>
+        <div class="copyright"><p>(c) 2012 Erin Bradford</p></div>
+        <hr class="HR" />
+    </div>
+    <div id="main">
+        <span class="subTopic" id="intro">core.Mode</span>&nbsp;&nbsp;&nbsp;&nbsp;(function)<a class="TOP" href="#TOP">&nbsp;&nbsp;</a><br />
+            &nbsp;&nbsp;&nbsp;&nbsp;returns a <a class="scode" href="core_Mode.htm#reference">reference object</a> to the mode, specified by the 'mode' argument. If the mode does not exsist, a new one will be created.<br />
+        <br />
+        <span class="subTopic" id="general_file">File</span><a class="TOP" href="#TOP">&nbsp;&nbsp;</a><br />
+            &nbsp;&nbsp;&nbsp;&nbsp;pops/pops.core.js<br />
+        <br />
+        <span class="subTopic" id="syntax">Syntax</span><a class="TOP" href="#TOP">&nbsp;&nbsp;</a><br />
+            <div class="code">
+                <span class="keyword">var</span> foo <span class="op">=</span> <span class="word">Mode</span><span class="op">(</span><span class="vari">mode</span><span class="op">)</span><span class="scol">;</span>
+                <div class="comments">
+                    <ul class="UL">
+                        <li><span class="title">mode :</span> A string value representing the name of a mode.</span></span></li>
+                    </ul>
+                </div>
+            </div>
+        <br />
+
+        <span class="subTopic" id="contents">Contents</span><a class="TOP" href="#TOP">&nbsp;&nbsp;</a><br />
+            <div class="contents">
+                <ul class="UL">
+                    <li><span class="title"><a href="#main">General</a></span>
+                        <ul class="UL">
+                            <li><span class="title"><a href="#intro">core.Mode</a></span></li>
+                            <li><span class="title"><a href="#general_file">File</a></span></li>
+                            <li><span class="title"><a href="#syntax">Syntax</a></span></li>
+                            <li><span class="title"><a href="#contents">Contents</a></span></li>
+                        </ul>
+                    </li>
+                    <li><span class="title"><a href="#reference">Mode reference</a></span>
+                        <ul class="UL">
+                            <li><span class="title"><a href="#ref_members">Members</a></span>
+                                <ul class="UL">
+                                    <li><span class="title"><a href="#ref_members_get">Get</a></span></li>
+                                    <li><span class="title"><a href="#ref_members_set">Set</a></span></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li><span class="title"><a href="#system">System modes</a></span>
+                        <ul class="UL">
+                            <li><span class="title"><a href="#system_os"><span class="dollar">$</span>os</a></span></li>
+                        </ul>
+                    </li>
+                    <li><span class="title"><a href="#examples">Examples</a></span>
+                        <ul class="UL">
+                            <li><span class="title"><a href="#examples_Mode">Mode & Mode reference</a></span></li>
+                        </ul>
+                    </li>
+                    <li><span class="title"><a href="#SeeAlso">See Also</a></span>
+                        <ul class="UL">
+                            <li><span class="title"><a href="#seeAlso_core">core</a></span></li>
+                            <li><span class="title"><a href="#seeAlso_general">General</a></span></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+
+        <span class="topic" id="reference">Mode reference</span><a class="TOP" href="#TOP">&nbsp;&nbsp;</a><hr />
+            &nbsp;&nbsp;&nbsp;&nbsp;An object that references a specific mode.<br />
+            <br />
+            <span class="subTopic" id="ref_members">Members</span><a class="TOP" href="#TOP">&nbsp;&nbsp;</a><br />
+                <ul class="UL">
+                    <li><span class="title" id="ref_members_get">Get :</span> function - Returns the mode value.<a class="TOP" href="#TOP">&nbsp;&nbsp;</a><br />
+                        <div class="code">
+                            <span class="keyword">var</span> val <span class="op">=</span> <span class="vari">modeRef</span><span class="op">.</span><span class="word">Get</span><span class="op">();</span>
+                            <hr />
+                            <span class="keyword">var</span> val <span class="op">=</span> <a class="scode" href="#intro">Mode</a><span class="op">(</span><span class="vari">modeName</span><span class="op">).</span><span class="word">Get</span><span class="op">();</span>
+                            <div class="comments">
+                                <ul class="UL">
+                                    <li><span class="title">modeRef : </span>Any mode reference.</li>
+                                    <li><span class="title">modeName : </span>A string value representing the name of a mode. If omitted, &quot;main&quot; will be used.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+                    <li><span class="title" id="ref_members_set">Set :</span> function - Sets the mode value.<a class="TOP" href="#TOP">&nbsp;&nbsp;</a><br />
+                        <div class="code">
+                            <span class="vari">modeRef</span><span class="op">.</span><span class="word">Set</span><span class="op">(</span><span class="vari">newValue</span><span class="op">);</span>
+                            <hr />
+                            <a class="scode" href="#intro">Mode</a><span class="op">(</span><span class="vari">modeName</span><span class="op">).</span><span class="word">Set</span><span class="op">(</span><span class="vari">newValue</span><span class="op">);</span>
+                            <div class="comments">
+                                <ul class="UL">
+                                    <li><span class="title">modeRef : </span>Any mode reference.</li>
+                                    <li><span class="title">modeName : </span>A string value representing the name of a mode. If omitted, &quot;main&quot; will be used.</li>
+                                    <li><span class="title">newValue : </span>A string representing the new value for a mode.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+        <br />
+        <span class="topic" id="system">System modes</span><a class="TOP" href="#TOP">&nbsp;&nbsp;</a><hr />
+            &nbsp;&nbsp;&nbsp;&nbsp;These modes are set by Pops Loader.<br />
+            <br />
+            <ul class="UL">
+                <li><span class="title" id="system_os"><span class="dollar">$</span>os : </span>The operating system Node is running on.</li>
+            </ul>
+
+        <span class="topic" id="examples">Examples</span><a class="TOP" href="#TOP">&nbsp;&nbsp;</a><hr />
+            <span class="subTopic" id="examples_Mode">Mode & Mode reference</span><a class="TOP" href="#TOP">&nbsp;&nbsp;</a><br />
+                <div class="code">
+                    <span class="keyword">require</span><span class="op">(</span><span class="str">&#39;pops/pops.loader&#39;</span><span class="op">)</span><span class="comma">.</span><a class="scode" href="loader.htm#func_Load">Load</a><span class="op">()</span><span class="scol">;</span><br />
+                    <br />
+                    <a class="scode" href="core_cout_sout.htm#intro">cout</a><span class="op">(</span><span class="str">&#39;<span class="dollar">$</span>os = &#39;</span> <span class="op">+</span> <a class="word scode" href="#intro">Mode</a><span class="op">(</span><span class="str">&#39;<span class="dollar">$</span>os&#39;</span><span class="op">).</span><a class="word scode" href="#ref_members_get">Get</a><span class="op">());</span><br />
+                    <br />
+                    <span class="keyword">var</span> result <span class="op">=</span> <a class="scode" href="#core_Modal.htm">Modal</a><span class="op">(</span><span class="str">&#39;<span class="dollar">$</span>os&#39;</span><span class="op">, {</span><br />
+                        &nbsp;&nbsp;&nbsp;&nbsp;win32<span class="op">:</span> <span class="str">&#39;- Running on Windows 32&#39;</span><span class="op">,</span><br />
+                        &nbsp;&nbsp;&nbsp;&nbsp;linux_or_linux<span class="op">:</span> <span class="str">&#39;- Running on Linux&#39;</span><span class="op">,</span><br />
+                        &nbsp;&nbsp;&nbsp;&nbsp;darwin<span class="op">:</span> <span class="str">&#39;- Running on Darwin&#39;</span><span class="op">,</span><br />
+                        &nbsp;&nbsp;&nbsp;&nbsp;<span class="dollar">$</span>else<span class="op">:</span> <span class="str">&#39;- Running on UNKNOWN&#39;</span><br />
+                    <span class="op">});</span><br />
+                    <br />
+                    <a class="scode" href="core_cout_sout.htm#intro">cout</a><span class="op">(</span>result<span class="op">);</span><br />
+
+                    <br />
+                    <a class="word scode" href="#intro">Mode</a><span class="op">(</span><span class="str">&#39;test&#39;</span><span class="op">).</span><a class="word scode" href="#ref_members_set">Set</a><span class="op">(</span><span class="str">&#39;hi&#39;</span><span class="op">);</span><br />
+                    <br />
+                    <span class="keyword">var</span> result2 <span class="op">=</span> <a class="scode" href="core_Modal.htm">Modal</a><span class="op">(</span><span class="str">&#39;Test&#39;</span><span class="op">, {</span><br />
+                        &nbsp;&nbsp;&nbsp;&nbsp;Hello<span class="op">:</span> <span class="str">&#39;- HELLO -&#39;</span><span class="op">,</span><br />
+                        &nbsp;&nbsp;&nbsp;&nbsp;Goodbye<span class="op">:</span> <span class="str">&#39;- GOODBYE -&#39;</span><span class="op">,</span><br />
+                        &nbsp;&nbsp;&nbsp;&nbsp;Hi<span class="op">:</span> <span class="str">&#39;- HI -&#39;</span><span class="op">,</span><br />
+                        &nbsp;&nbsp;&nbsp;&nbsp;Bye<span class="op">:</span> <span class="str">&#39;- BYE -&#39;</span><br />
+                    <span class="op">});</span><br />
+                    <br />
+                    <a class="scode" href="core_cout_sout.htm#intro">cout</a><span class="op">(</span>result2<span class="op">);</span>
+                </div>
+            <br />
+
+        <span class="topic" id="SeeAlso">See Also</span><a class="TOP" href="#TOP">&nbsp;&nbsp;</a><hr />
+            <ul class="UL">
+                <li><span class="title" id="seeAlso_core"><a href="core.htm">core</a></span><a class="TOP" href="#TOP">&nbsp;&nbsp;</a>
+                    <ul class="UL">
+                        <li><span class="title"><a href="core_Choose.htm">Choose</a></span></li>
+                        <li><span class="title"><a href="core_cout_sout.htm">cout</a></span></li>
+                        <li><span class="title"><a href="core_IsMode.htm">IsMode</a></span></li>
+                        <li><span class="title"><a href="core_Modal.htm">Modal</a></span></li>
+                        <li><span class="title"><a href="core_Modes.htm">Modes</a></span></li>
+                    </ul>
+                </li>
+                <li><span class="title" id="seeAlso_general">General</span><a class="TOP" href="#TOP">&nbsp;&nbsp;</a>
+                    <ul class="UL">
+                        <li><span class="title"><a href="Contents.htm">Contents</a></span></li>
+                    </ul>
+                </li>
+            </ul>
+
+    </div>
+    </body>
+</html>

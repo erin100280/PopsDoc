@@ -1,0 +1,451 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head>
+    <title></title>
+    <style>﻿.TAB1{
+    display:inline-block; width:30px;
+}
+body
+{
+}
+.header{height: auto;width: 100%;}
+
+#main{height: auto;}
+
+.TOP{
+    display:inline;
+    position:relative;
+    padding: 0 6px 0 6px;
+    width:120px;
+    height:12px;
+    background-image:url(TOP.png);
+    background-position:right center;
+    background-repeat:no-repeat;
+    top:-2px;
+    margin-left:14px;
+    text-decoration:none;
+}
+.scode{
+    display:inline;
+    position:relative;
+    color:Black;
+    font-size:medium;
+    font-style:normal;
+    text-decoration:underline;
+}
+.contents{
+    padding: 6px 12px 6px 12px;
+    margin: 10px 20px 10px 20px;
+    background-color: #FFFFEA;
+    border: solid 1px Silver;
+    font-size: medium;
+}
+.code,.codeline{
+    background-color: #CCFFFF;
+    border:solid 1px Silver;
+}
+.code{
+    font-size: medium;
+    padding: 6px 12px 6px 12px;
+    margin: 10px 20px 10px 20px;
+    font-family:COURIER;
+}
+.codeline{
+    display :inline-block;
+    padding: 4px 12px 4px 12px;
+    margin:0,0,0,0;
+}
+.subTopic{
+    font-size: 14pt;
+    font-weight: bold;
+}
+.topic{
+    font-size: 24pt;
+    font-weight: bold;
+}
+.word{
+    font-weight: bold;
+}
+.code .keyword{
+    color: #0033CC;
+    font-weight: bolder;
+}
+.code .op{
+    color: #0033CC;
+    font-weight: bolder;
+}
+.code .comma{
+    font-weight: bold;
+    margin-right: 6px;
+    margin-left: 6px;
+    font-family: Courier;
+}
+.code .scol{
+    color: #0033CC;
+    font-weight: bold;
+}
+.commentLine{
+    color: #009900;
+    font-size:medium;
+    font-weight:normal;
+}
+.code .str{
+    color: #CC0000;
+}
+.code .colon{
+    color: #0000FF;
+    font-weight: 900;
+    font-size: large;
+}
+.code .optionalArgs{
+    background-color: #FFFF99;
+}
+.code .vari{
+    color: #CC00FF;
+}
+.comments{
+    margin: 18px 8px 6px 8px;
+    position: relative;
+    padding: 6px;
+    background-color: #F0F0F0;
+    top: 0px;
+    left: 1px;
+}
+
+ul.UL{
+
+}
+
+/*ul.UL > li > span > .title{*/
+ul.UL > li .title{
+    font-size: large;
+    font-weight: bold;
+}
+
+.header .help{
+    position: absolute;
+    width: auto;
+    height: auto;
+    top: 4px;
+    left: 8px;
+    color:Red;
+    /*text-decoration:blink;*/
+    text-align:left;
+    font-size:large;
+}
+.header .copyright{
+    position: absolute;
+    width: auto;
+    height: auto;
+    top: 14px;
+    right: 8px;
+    text-align: right;
+    font-size:larger;
+}
+.header .website{
+    position: absolute;
+    width: auto;
+    height: auto;
+    top: -12px;
+    right: 8px;
+    text-align: right;
+    font-size:larger;
+}
+.header .titleLinks{
+    margin-top: -4px;
+    text-align: center;
+    font-size: x-large;
+}
+.header .slogan{
+    margin-top: -22px;
+    text-align: center;
+    font-size: large;
+}
+.header .HR{
+    margin-top: -12px;
+}
+.dollar{color: #E67300;}
+
+.int{color:Green}
+
+.table {
+    position:relative;
+    width: 100%;
+    left:20px;
+    border-color:Black;
+    border-style: double;
+    border-width: 2px;
+}
+
+.table tr {}
+
+.table tr td {
+    border-bottom-width: 1px;
+    border-bottom-style:dashed;
+}
+.table tr td.header {
+    border-bottom-width: 2px;
+    border-bottom-style: double;
+    text-align:center;
+    font-weight:bold;
+}
+.table tr td.name { 
+    padding-left:12px;
+    font-size: medium;
+    font-family:COURIER;
+}
+.table tr td.result {
+    text-align:center;
+    font-weight:bolder;
+    border-color:Black;
+}
+.table tr td.result.error{color:Red;}
+.table tr td.result.good{color:Green;}
+
+
+
+
+
+
+</style>
+</head>
+<body id="TOP">
+    <div id="header" class="header">
+        <p class="titleLinks">
+            <a href="Contents.htm">Pops Documentatin</a>
+            <span> : </span> 
+            <a href="core.htm">core</a>
+            <span> : </span> 
+            <a href="core_Class.htm">Class</a>
+        </p>
+        <p class="slogan">A Framework For Node.JS</p>
+        <a class="help" href="help.htm">help</a>
+        <div class="website"><p><a href="https://sites.google.com/site/popsnode/">Pops Website</a></p></div>
+        <div class="copyright"><p>(c) 2012 Erin Bradford</p></div>
+        <hr class="HR" />
+    </div>
+    <div id="main">
+        <span class="subTopic" id="intro">core.Class</span>&nbsp;&nbsp;&nbsp;&nbsp;(object)<a class="TOP" href="#TOP">&nbsp;&nbsp;</a><br />
+            &nbsp;&nbsp;&nbsp;&nbsp;Class is an object used to create new Pops classes.<br />
+        <br />
+        <span class="subTopic" id="general_file">File</span><a class="TOP" href="#TOP">&nbsp;&nbsp;</a><br />
+            &nbsp;&nbsp;&nbsp;&nbsp;pops/pops.core.js<br />
+        <br />
+        <span class="subTopic" id="syntax">Syntax</span><a class="TOP" href="#TOP">&nbsp;&nbsp;</a><br />
+            <div class="code">
+                <span class="keyword">var</span> foo <span class="op">=</span> <span class="keyword">new</span> <span class="word">Class</span><span class="op">(</span><span class="vari">specs</span><span class="optionalArgs">&nbsp;<span class="comma">,</span> <span class="vari">onLoaded</span>&nbsp; </span><span class="op"> )</span><span class="scol">;</span>
+                <hr />
+                <span class="keyword">var</span> foo <span class="op">=</span> <span class="word">Class</span><span class="op">(</span><span class="vari">specs</span> <span class="optionalArgs">&nbsp;<span class="comma">,</span><span class="vari">onLoaded</span>&nbsp; </span><span class="op">)</span><span class="scol">;</span>
+                <div class="comments">
+                    <ul class="UL">
+                        <li><span class="title"><a href="#specs">specs</a> :</span> An object containing the specifications for the new class.</li>
+                        <li><span class="title">onLoaded :</span> optional - The function to be called after the new class is created.</span></span></li>
+                    </ul>
+                </div>
+            </div>
+        <br />
+
+        <span class="subTopic" id="contents">Contents</span><a class="TOP" href="#TOP">&nbsp;&nbsp;</a><br />
+            <div class="contents">
+                <ul class="UL">
+                    <li><span class="title"><a href="#main">General</a></span>
+                        <ul class="UL">
+                            <li><span class="title"><a href="#intro">core.Class</a></span></li>
+                            <li><span class="title"><a href="#general_file">File</a></span></li>
+                            <li><span class="title"><a href="#syntax">Syntax</a></span></li>
+                            <li><span class="title"><a href="#contents">Contents</a></span></li>
+                        </ul>
+                    </li>
+                    <li><span class="title"><a href="#specs">Specs</a></span>
+                        <ul class="UL">
+                            <li><span class="title"><a href="#specs_Extends">Extends</a></span></li>
+                            <li><span class="title"><a href="#specs_Implements">Implements</a></span></li>
+                            <li><span class="title"><a href="#specs_options">options</a></span></li>
+                            <li><span class="title"><a href="#specs_Init">Init</a></span></li>
+                            <li><span class="title"><a href="#specs_on">on</a></span></li>
+                            <li><span class="title"><a href="#specs__on"><span class="dollar">$</span>on</a></span></li>
+                            <li><span class="title"><a href="#specs__name"><span class="dollar">$</span>name</a></span></li>
+                        </ul>
+                    </li>
+                    <li><span class="title"><a href="#examples">Examples</a></span>
+                        <ul class="UL">
+                            <li><span class="title"><a href="#examples_Class">Class</a></span></li>
+                            <li><span class="title"><a href="#inheritance">Class Inheritance</a></span></li>
+                        </ul>
+                    </li>
+                    <li><span class="title"><a href="#SeeAlso">See Also</a></span>
+                        <ul class="UL">
+                            <li><span class="title"><a href="#seeAlso_core">core</a></span></li>
+                            <li><span class="title"><a href="#seeAlso_general">General</a></span></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+
+        <span class="topic" id="specs">Specs</span><a class="TOP" href="#TOP">&nbsp;&nbsp;</a><hr />
+            <ul class="UL">
+                <li class="bli"><span class="title" id="specs_Extends">Extends:</span> Used to extend an existing class. The class 
+                        will have access to, and act like the class beimg extended. The point is to add 
+                        new functionality by creating new functions and/or overriding existing ones. The overriding function will have access to the function 
+                        being overridden(using the &#39;Parent()&#39; function).<a class="TOP" href="#TOP">&nbsp;&nbsp;</a><br />
+                    <div class="code">
+                        <span class="word">Extends</span><span class="colon">:</span> <span class="vari">existingClass</span><span class="comma">,</span>
+                        <br />
+                    </div>
+                </li>
+                <li class="bli"><span class="title" id="specs_Implements">Implements :</span> 
+                        Your new class can implement an unlimited number of existing classes.When you 
+                        implement a class, your new class will get all of the members of the existing 
+                        class but will not run the existing class&#39; Init function.<a class="TOP" href="#TOP">&nbsp;&nbsp;</a>
+                    <div class="code">
+                        <span class="word">Implements</span><span class="colon">:</span> <span><span class="vari">existingClass</span></span><span><span class="comma">,</span><br />
+                        <hr />
+                        <span class="word">Implements</span><span class="colon">:</span> <span class="op">[</span><span class="vari">existingClass</span><span class="comma">,</span> <span class="vari">existingClass2</span><span class="comma">,</span> <span class="vari">existingClass3</span><span class="op">]</span><span class="comma">,</span>
+                    </div>
+                </li>
+                <li class="bli"><span class="title" id="specs_options">options :</span> An object containing the default options for a new instance of your class.<a class="TOP" href="#TOP">&nbsp;&nbsp;</a>
+                    <div class="code">
+                        <span class="word">options</span><span class="colon">:</span> </span><span class="vari">defOptions</span>
+                        </span><span class="comma">,</span> 
+                        <div class="comments">
+                            <ul class="UL">
+                                <li><span class="title">defOptions :</span> Example:
+                                    <div class="codeline">
+                                        <span class="op">{</span> title<span class="colon">:</span> <span class="str">&#39;My Class&#39;</span><span class="comma">,</span> DoStuff<span class="colon">:</span> <span class="keyword">function</span><span class="op">(</span>str1<span class="op">){</span> cout<span class="op">(</span>str1<span class="op">)<span class="scol">;</span> }</span> <span class="op">}</span>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+                <li class="bli"><span class="title" id="specs_Init">Init :</span> This is the function that is called during the initialization of a new instance of your class.<a class="TOP" href="#TOP">&nbsp;&nbsp;</a>
+                    <div class="code">
+                        <span class="word">Init</span><span class="colon">:</span> <span class="vari">initFn</span><span class="comma">,</span> 
+                        <div class="comments">
+                            <ul class="UL">
+                                <li><span class="title">initFn :</span> The arguments 
+                                        passed to this function are the arguments passed to the &#39;new&#39; call for the 
+                                        class. In the following example, &#39;a1&#39; and &#39;a2&#39; are passed to the Init function 
+                                        of the &#39;tester&#39; class.
+                                    <div class="code">
+                                        <span class="keyword">var</span> foo <span class="op">=</span> <span class="keyword">new</span> tester<span class="op">(</span>a1<span class="comma">,</span> a2<span class="op">)</span><span class="scol">;</span>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+                <li class="bli"><span class="title" id="specs_on">on :</span> The &#39;on&#39; 
+                        spec allows you to add event handlers for events emitted by any classes that are 
+                        implemented or extended by your class. If your class does not implement or 
+                        extend any classes, then &#39;init&#39; and &#39;afterInit&#39; are the only events that can be 
+                        handled by the &#39;on&#39; spec.<a class="TOP" href="#TOP">&nbsp;&nbsp;</a>
+                    <div class="code">
+                        <span class="word">on</span><span class="colon">:</span> <span class="op">{</span> <span class="vari">eventName</span><span class="colon">:</span> <span class="vari">handler</span><span class="comma">,</span> <span class="vari">eventName2</span><span class="colon">:</span> <span class="vari">handler2</span> <span class="op">}</span><span class="comma">,</span> <br />
+                        <hr />
+                        <span class="word">on</span><span class="colon">:</span> <span class="op">{</span> <span class="vari">eventName</span><span class="colon">:</span> <span class="vari">handler</span><span class="comma">,</span> <span class="vari">eventName2</span><span class="colon">:</span> <span class="op">[</span><span class="vari">handler2_1</span><span class="comma">,</span> <span class="vari">handler2_2</span><span class="op">]</span> <span class="op">}</span><span class="comma">,</span>
+                        <div class="comments">
+                            <ul class="UL">
+                                <li><span class="title">eventName, eventName2 :</span> Event names (&quot;init&quot;, &quot;load&quot;, &quot;unload&quot;, &quot;request&quot;, etc).</li>
+                                <li><span class="title">handler, handler2 :</span> Handler functions are called when the specified event is emitted.</li>
+                                <li><span class="title">handler2_1, handler2_2 :</span> Same as handler, but when in an array, multiple handlers can be set for a single&nbsp;event.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+                <li><span class="title" id="specs__on"><span class="dollar">$</span>on :</span> This is the same as &#39;on&#39;, except, the handlers are called in reverse order (last in, first out).<a class="TOP" href="#TOP">&nbsp;&nbsp;</a></li>
+                <li><span class="title" id="specs__name"><span class="dollar">$</span>name 
+                        :</span> Giving your class a unique name helps you to identify and manage 
+                        classes. It also allow you to run certain fuctions, passing the name of a class as an argument, 
+                        rather than using a reference to the class.<a class="TOP" href="#TOP">&nbsp;&nbsp;</a></li>
+            </ul>
+
+        <span class="topic" id="examples">Examples</span><a class="TOP" href="#TOP">&nbsp;&nbsp;</a><hr />
+            <span class="subTopic" id="examples_Class">Class</span><a class="TOP" href="#TOP">&nbsp;&nbsp;</a><br />
+                <div class="code">
+                    <span class="keyword">require</span><span class="op">(</span><span class="str">&#39;pops/pops.loader&#39;</span><span class="op">)</span><span class="comma">.</span><a class="scode" href="loader.htm#func_Load">Load</a><span class="op">()</span><span class="scol">;</span><br />
+                    <br />
+<!! class1 !!>
+                    <span class="keyword">var</span> class1 <span class="op">=</span> <span class="keyword">new</span> <a class="scode" href="#main">Class</a><span class="op">({</span><br />
+                        &nbsp;&nbsp;&nbsp;&nbsp;<a class="scode" href="#specs_options">options</a><span class="colon">:</span> <span class="op">{</span> val<span class="colon">:</span> <span class="str">&#39;HeLlO wOrLd&#39;</span> <span class="op">}</span><span class="comma">,</span><br />
+                        &nbsp;&nbsp;&nbsp;&nbsp;<a class="scode" href="#specs_Init">Init</a><span class="colon">:</span> <span class="keyword"><a href="function.htm">function</a></span><span class="op">(</span>ops<span class="op">)</span> <span class="op">{</span><br />
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">this</span><span class="comma">.</span><a class="scode" href="core_ClassInstance.htm#func_SetOptions">SetOptions</a><span class="op">(</span>ops<span class="op">)</span><span class="scol">;</span> <span class="commentLine">// SetOptions is usualy the first statement in the Init function.</span><br />
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">var</span> o <span class="op">=</span> <span class="keyword">this</span><span class="comma">.</span>options<span class="scol">;</span> <span class="commentLine">// you can also use this.op, instead of this.options.</span><br />
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">var</span> v <span class="op">=</span> o<span class="comma">.</span>val<span class="scol">;</span><br />
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">if</span> <span class="op">(!</span><a class="scode" href="core_def.htm">def</a><span class="op">(</span>v<span class="op">))</span> v <span class="op">=</span> <span class="str">&#39;HELLO WORLD&#39;</span><span class="scol">;</span><br />
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">this</span><span class="comma">.</span>value <span class="op">=</span> v<span class="op">;</span><br />
+                        &nbsp;&nbsp;&nbsp;&nbsp;<span class="op">}</span><span class="comma">,</span><br />
+
+<!! class1 | DoStuff() !!>
+                        &nbsp;&nbsp;&nbsp;&nbsp;DoStuff<span class="colon">:</span> <span class="keyword"><a href="function.htm">function</a></span><span class="op">(</span><span class="op">)</span> <span class="op">{</span> <span class="keyword">return</span> <span class="keyword">this</span><span class="comma">.</span>value<span class="scol">;</span> <span class="op">}</span><span class="comma">,</span><br />
+
+                    <span class="op">}</span><span class="op">)</span><span class="scol">;</span><br />
+                    <br />
+
+                    <span class="keyword">var</span> c1 <span class="op">=</span> <span class="keyword">new</span> <a class="scode" href="core_ClassInstance.htm">class1</a><span class="op">({</span> val<span class="colon">:</span> <span class="str">&#39;Hello World&#39;</span> <span class="op">})</span><span class="scol">;</span><br />
+                    <a class="scode" href="core_cout_sout.htm">cout</a><span class="op">(</span>c1<span class="comma">.</span>DoStuff<span class="op">())</span><span class="scol">;</span><br />
+
+
+                </div><br />
+            <br />
+
+            <span class="subTopic" id="inheritance">Class Inheritance</span><a class="TOP" href="#TOP">&nbsp;&nbsp;</a><br />
+                <div class="code">
+                    <span class="keyword">require</span><span class="op">(</span><span class="str">&#39;pops/pops.loader&#39;</span><span class="op">)</span><span class="comma">.</span><a class="scode" href="loader.htm#func_Load">Load</a><span class="op">()</span><span class="scol">;</span><br />
+                    <br />
+<!! class1 !!>
+                    <span class="keyword">var</span> class1 <span class="op">=</span> <span class="keyword">new</span> <a class="scode" href="#main">Class</a><span class="op">({</span><br />
+                        &nbsp;&nbsp;&nbsp;&nbsp;<a class="scode" href="#specs_options">options</a><span class="colon">:</span> <span class="op">{</span> val<span class="colon">:</span> <span class="str">&#39;HeLlO wOrLd&#39;</span> <span class="op">}</span><span class="comma">,</span><br />
+                        &nbsp;&nbsp;&nbsp;&nbsp;<a class="scode" href="#specs_Init">Init</a><span class="colon">:</span> <span class="keyword"><a href="function.htm">function</a></span><span class="op">(</span>ops<span class="op">)</span> <span class="op">{</span><br />
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">this</span><span class="comma">.</span><a class="scode" href="core_ClassInstance.htm#func_SetOptions">SetOptions</a><span class="op">(</span>ops<span class="op">)</span><span class="scol">;</span><br />
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">var</span> o <span class="op">=</span> <span class="keyword">this</span><span class="comma">.</span>options<span class="scol">;</span><br />
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">var</span> v <span class="op">=</span> o<span class="comma">.</span>val<span class="scol">;</span><br />
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">if</span> <span class="op">(!</span><a class="scode" href="core_def.htm">def</a><span class="op">(</span>v<span class="op">))</span> v <span class="op">=</span> <span class="str">&#39;HELLO WORLD&#39;</span><span class="scol">;</span><br />
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">this</span><span class="comma">.</span>value <span class="op">=</span> v<span class="op">;</span><br />
+                        &nbsp;&nbsp;&nbsp;&nbsp;<span class="op">}</span><span class="comma">,</span><br />
+
+<!! class1 | DoStuff() !!>
+                        &nbsp;&nbsp;&nbsp;&nbsp;DoStuff<span class="colon">:</span> <span class="keyword"><a href="function.htm">function</a></span><span class="op">(</span><span class="op">)</span> <span class="op">{</span> <span class="keyword">return</span> <span class="keyword">this</span><span class="comma">.</span>value<span class="scol">;</span> <span class="op">}</span><span class="comma">,</span><br />
+
+                    <span class="op">}</span><span class="op">)</span><span class="scol">;</span><br />
+                    <br />
+<!! class2 !!>
+                    <span class="keyword">var</span> class2 <span class="op">=</span> <span class="keyword">new</span> <a class="scode" href="#main">Class</a><span class="op">({</span><br />
+                        &nbsp;&nbsp;&nbsp;&nbsp;<a class="scode" href="#specs_Extends">Extends</a><span class="colon">:</span> class1<span class="comma">,</span><br />
+                        &nbsp;&nbsp;&nbsp;&nbsp;<a class="scode" href="#specs_Init">Init</a><span class="colon">:</span> <span class="keyword"><a href="function.htm">function</a></span><span class="op">(</span>ops<span class="op">)</span> <span class="op">{</span> <a class="scode" href="core_ClassInstance.htm#func_Parent">Parent</a><span class="op">(</span>ops<span class="op">)</span><span class="scol">;</span> <span class="op">}</span><span class="comma">,</span><br />
+<!! class2 | DoStuff() !!>
+                        &nbsp;&nbsp;&nbsp;&nbsp;DoStuff<span class="colon">:</span> <span class="keyword"><a href="function.htm">function</a></span><span class="op">(</span><span class="op">)</span> <span class="op">{</span><br />
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">return</span> <span class="str">&#39;The value is: ( &#39;</span> <span class="op">+</span> <a class="scode" href="core_ClassInstance.htm#func_Parent">Parent</a><span class="op">()</span> <span class="op">+</span> <span class="str">&#39; )&#39;</span><span class="scol">;</span><br />
+                        &nbsp;&nbsp;&nbsp;&nbsp;<span class="op">}</span><span class="comma">,</span><br />
+
+                    <span class="op">}</span><span class="op">)</span><span class="scol">;</span><br />
+                    <br />
+
+                    <span class="keyword">var</span> c1 <span class="op">=</span> <span class="keyword">new</span> <a class="scode" href="core_ClassInstance.htm">class1</a><span class="op">({</span> val<span class="colon">:</span> <span class="str">&#39;Hello World&#39;</span> <span class="op">})</span><span class="scol">;</span><br />
+                    <a class="scode" href="core_cout_sout.htm">cout</a><span class="op">(</span>c1<span class="comma">.</span>DoStuff<span class="op">())</span><span class="scol">;</span><br />
+                    <br />
+                    <span class="keyword">var</span> c2 <span class="op">=</span> <span class="keyword">new</span> <a class="scode" href="core_ClassInstance.htm">class2</a><span class="op">({</span> val<span class="colon">:</span> <span class="str">&#39;Hello World&#39;</span> <span class="op">})</span><span class="scol">;</span><br />
+                    <a class="scode" href="core_cout_sout.htm">cout</a><span class="op">(</span>c2<span class="comma">.</span>DoStuff<span class="op">())</span><span class="scol">;</span><br />
+
+
+                </div><br />
+            <br />
+        <span class="topic" id="SeeAlso">See Also</span><a class="TOP" href="#TOP">&nbsp;&nbsp;</a><hr />
+            <ul class="UL">
+                <li><span class="title" id="seeAlso_core"><a href="core.htm">core</a></span><a class="TOP" href="#TOP">&nbsp;&nbsp;</a>
+                    <ul class="UL">
+                        <li><span class="title"><a href="core_ClassInstance.htm">Class (Instance)</a></span></li>
+                        <li><span class="title"><a href="core_cout_sout.htm">cout</a></span></li>
+                        <li><span class="title"><a href="core_def.htm">def</a></span></li>
+                    </ul>
+                </li>
+                <li><span class="title" id="seeAlso_general">General</span><a class="TOP" href="#TOP">&nbsp;&nbsp;</a>
+                    <ul class="UL">
+                        <li><span class="title"><a href="Contents.htm">Contents</a></span></li>
+                    </ul>
+                </li>
+            </ul>
+
+    </div>
+    </body>
+</html>

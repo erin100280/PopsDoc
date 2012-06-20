@@ -1,0 +1,346 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head>
+    <title></title>
+    <style>﻿.TAB1{
+    display:inline-block; width:30px;
+}
+body
+{
+}
+.header{height: auto;width: 100%;}
+
+#main{height: auto;}
+
+.TOP{
+    display:inline;
+    position:relative;
+    padding: 0 6px 0 6px;
+    width:120px;
+    height:12px;
+    background-image:url(TOP.png);
+    background-position:right center;
+    background-repeat:no-repeat;
+    top:-2px;
+    margin-left:14px;
+    text-decoration:none;
+}
+.scode{
+    display:inline;
+    position:relative;
+    color:Black;
+    font-size:medium;
+    font-style:normal;
+    text-decoration:underline;
+}
+.contents{
+    padding: 6px 12px 6px 12px;
+    margin: 10px 20px 10px 20px;
+    background-color: #FFFFEA;
+    border: solid 1px Silver;
+    font-size: medium;
+}
+.code,.codeline{
+    background-color: #CCFFFF;
+    border:solid 1px Silver;
+}
+.code{
+    font-size: medium;
+    padding: 6px 12px 6px 12px;
+    margin: 10px 20px 10px 20px;
+    font-family:COURIER;
+}
+.codeline{
+    display :inline-block;
+    padding: 4px 12px 4px 12px;
+    margin:0,0,0,0;
+}
+.subTopic{
+    font-size: 14pt;
+    font-weight: bold;
+}
+.topic{
+    font-size: 24pt;
+    font-weight: bold;
+}
+.word{
+    font-weight: bold;
+}
+.code .keyword{
+    color: #0033CC;
+    font-weight: bolder;
+}
+.code .op{
+    color: #0033CC;
+    font-weight: bolder;
+}
+.code .comma{
+    font-weight: bold;
+    margin-right: 6px;
+    margin-left: 6px;
+    font-family: Courier;
+}
+.code .scol{
+    color: #0033CC;
+    font-weight: bold;
+}
+.commentLine{
+    color: #009900;
+    font-size:medium;
+    font-weight:normal;
+}
+.code .str{
+    color: #CC0000;
+}
+.code .colon{
+    color: #0000FF;
+    font-weight: 900;
+    font-size: large;
+}
+.code .optionalArgs{
+    background-color: #FFFF99;
+}
+.code .vari{
+    color: #CC00FF;
+}
+.comments{
+    margin: 18px 8px 6px 8px;
+    position: relative;
+    padding: 6px;
+    background-color: #F0F0F0;
+    top: 0px;
+    left: 1px;
+}
+
+ul.UL{
+
+}
+
+/*ul.UL > li > span > .title{*/
+ul.UL > li .title{
+    font-size: large;
+    font-weight: bold;
+}
+
+.header .help{
+    position: absolute;
+    width: auto;
+    height: auto;
+    top: 4px;
+    left: 8px;
+    color:Red;
+    /*text-decoration:blink;*/
+    text-align:left;
+    font-size:large;
+}
+.header .copyright{
+    position: absolute;
+    width: auto;
+    height: auto;
+    top: 14px;
+    right: 8px;
+    text-align: right;
+    font-size:larger;
+}
+.header .website{
+    position: absolute;
+    width: auto;
+    height: auto;
+    top: -12px;
+    right: 8px;
+    text-align: right;
+    font-size:larger;
+}
+.header .titleLinks{
+    margin-top: -4px;
+    text-align: center;
+    font-size: x-large;
+}
+.header .slogan{
+    margin-top: -22px;
+    text-align: center;
+    font-size: large;
+}
+.header .HR{
+    margin-top: -12px;
+}
+.dollar{color: #E67300;}
+
+.int{color:Green}
+
+.table {
+    position:relative;
+    width: 100%;
+    left:20px;
+    border-color:Black;
+    border-style: double;
+    border-width: 2px;
+}
+
+.table tr {}
+
+.table tr td {
+    border-bottom-width: 1px;
+    border-bottom-style:dashed;
+}
+.table tr td.header {
+    border-bottom-width: 2px;
+    border-bottom-style: double;
+    text-align:center;
+    font-weight:bold;
+}
+.table tr td.name { 
+    padding-left:12px;
+    font-size: medium;
+    font-family:COURIER;
+}
+.table tr td.result {
+    text-align:center;
+    font-weight:bolder;
+    border-color:Black;
+}
+.table tr td.result.error{color:Red;}
+.table tr td.result.good{color:Green;}
+
+
+
+
+
+
+</style>
+</head>
+<body id="TOP">
+    <div id="header" class="header">
+        <p class="titleLinks">
+            <a href="Contents.htm">Pops Documentatin</a>
+            <span> : </span> 
+            <a href="core.htm">core</a>
+            <span> : </span> 
+            <a href="core_typeOf.htm">typeOf</a> & <a href="core_typeOf.htm">TypeOf</a>
+        </p>
+        <p class="slogan">A Framework For Node.JS</p>
+        <a class="help" href="help.htm">help</a>
+        <div class="website"><p><a href="https://sites.google.com/site/popsnode/">Pops Website</a></p></div>
+        <div class="copyright"><p>(c) 2012 Erin Bradford</p></div>
+        <hr class="HR" />
+    </div>
+    <div id="main">
+        <span class="subTopic" id="intro">core.typeOf</span>&nbsp;&nbsp;&nbsp;&nbsp;(function)<a class="TOP" href="#TOP">&nbsp;&nbsp;</a><br />
+            &nbsp;&nbsp;&nbsp;&nbsp;Returns the type-name (string, number, object, function, class, undefined) of a value. This is like the keyword 'typeof', except it recognizes <a class="scode" href="core_Class">pops classes</a>.<br />
+        <br />
+        <span class="subTopic" id="intro2">core.TypeOf</span>&nbsp;&nbsp;&nbsp;&nbsp;(function)<a class="TOP" href="#TOP">&nbsp;&nbsp;</a><br />
+            &nbsp;&nbsp;&nbsp;&nbsp;Same as <a class="scode" href="#intro">typeOf</a> except, it will return a class' <span class="dollar">$</span>name, when available.<br />
+        <br />
+        <span class="subTopic" id="general_file">File</span><a class="TOP" href="#TOP">&nbsp;&nbsp;</a><br />
+            &nbsp;&nbsp;&nbsp;&nbsp;pops/pops.core.js<br />
+        <br />
+        <span class="subTopic" id="syntax">Syntax</span><a class="TOP" href="#TOP">&nbsp;&nbsp;</a><br />
+            <div class="code">
+                <span class="keyword">var</span> foo <span class="op">=</span> <a class="scode word" href="#intro">typeOf</a><span class="op">(</span><span class="vari">val</span><span class="op">)</span><span class="scol">;</span><br />
+                <hr />
+                <span class="keyword">var</span> foo <span class="op">=</span> <a class="scode word" href="#intro2">TypeOf</a><span class="op">(</span><span class="vari">val</span><span class="op">)</span><span class="scol">;</span><br />
+                <div class="comments">
+                    <ul class="UL">
+                        <li><span class="title">val : </span>Any var/value.</li>
+                    </ul>
+                </div>
+            </div>
+        <br />
+
+        <span class="subTopic" id="contents">Contents</span><a class="TOP" href="#TOP">&nbsp;&nbsp;</a><br />
+            <div class="contents">
+                <ul class="UL">
+                    <li><span class="title"><a href="#main">General</a></span>
+                        <ul class="UL">
+                            <li><span class="title"><a href="#intro">core.typeOf</a></span></li>
+                            <li><span class="title"><a href="#intro2">core.TypeOf</a></span></li>
+                            <li><span class="title"><a href="#general_file">File</a></span></li>
+                            <li><span class="title"><a href="#syntax">Syntax</a></span></li>
+                            <li><span class="title"><a href="#contents">Contents</a></span></li>
+                        </ul>
+                    </li>
+                    <li><span class="title"><a href="#examples">Examples</a></span>
+                        <ul class="UL">
+                            <li><span class="title"><a href="#examples_both">typeOf & TypeOf</a></span></li>
+                        </ul>
+                    </li>
+                    <li><span class="title"><a href="#SeeAlso">See Also</a></span>
+                        <ul class="UL">
+                            <li><span class="title"><a href="#seeAlso_core">core</a></span></li>
+                            <li><span class="title"><a href="#seeAlso_general">General</a></span></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+
+        <span class="topic" id="examples">Examples</span><a class="TOP" href="#TOP">&nbsp;&nbsp;</a><hr />
+            <span class="subTopic" id="examples_both">typeOf & TypeOf (also uses JS keyword 'typeof')</span><a class="TOP" href="#TOP">&nbsp;&nbsp;</a><br />
+                <div class="code">
+                    <span class="keyword">require</span><span class="op">(</span><span class="str">&#39;pops/pops.loader&#39;</span><span class="op">)</span><span class="comma">.</span><a class="scode" href="loader.htm#func_Load">Load</a><span class="op">()</span><span class="scol">;</span><br />
+                    <br />
+                    <span class="keyword">var</span> test <span class="op">=</span> <a class="scode" href="core_Class.htm">Class</a><span class="op">({</span> <span class="commentLine">// Create a test class.</span><br />
+                        &nbsp;&nbsp;&nbsp;&nbsp;$name<span class="op">:</span> <span class="str">&#39;testClass&#39;</span><span class="op">,</span><br />
+                        &nbsp;&nbsp;&nbsp;&nbsp;Init<span class="op">:</span> <a class="scode keyword" href="function.htm">function</a><span class="op">(</span><span class="op">) { }</span><br />
+                    <span class="op">});</span><br />
+
+                    <br />
+                    <span class="keyword">var</span> v1 <span class="op">= [</span><span class="commentLine"> // Create an array full of objects.</span><br />
+                        &nbsp;&nbsp;&nbsp;&nbsp;<span class="op">{</span> name<span class="op">:</span> <span class="str">&#39;str&#39;</span><span class="op">,</span> value<span class="op">:</span> <span class="str">&#39;hello&#39;</span> <span class="op">},</span><br />
+                        &nbsp;&nbsp;&nbsp;&nbsp;<span class="op">{</span> name<span class="op">:</span> <span class="str">&#39;num&#39;</span><span class="op">,</span> value<span class="op">:</span> <span class="int">22</span> <span class="op">},</span><br />
+                        &nbsp;&nbsp;&nbsp;&nbsp;<span class="op">{</span> name<span class="op">:</span> <span class="str">&#39;arr&#39;</span><span class="op">,</span> value<span class="op">:</span> <span class="op">[</span><span class="int">2</span><span class="op">,</span> <span class="int">4</span><span class="op">,</span> <span class="int">6</span><span class="op">,</span> <span class="int">8</span><span class="op">] },</span><br />
+                        &nbsp;&nbsp;&nbsp;&nbsp;<span class="op">{</span> name<span class="op">:</span> <span class="str">&#39;obj&#39;</span><span class="op">,</span> value<span class="op">:</span> <span class="op">{</span> foo<span class="op">:</span> <span class="str">&#39;bar&#39;</span><span class="op">,</span> hello<span class="op">:</span> <span class="str">&#39;world&#39;</span><span class="op">,</span> cliche<span class="op">:</span> <span class="str">&#39;yes&#39;</span> <span class="op">}</span> <span class="op">},</span><br />
+                        &nbsp;&nbsp;&nbsp;&nbsp;<span class="op">{</span> name<span class="op">:</span> <span class="str">&#39;fun&#39;</span><span class="op">,</span> value<span class="op">:</span> <a class="scode keyword" href="function.htm">function</a><span class="op">(</span><span class="op">) {</span> <span class="op">} },</span><br />
+                        &nbsp;&nbsp;&nbsp;&nbsp;<span class="op">{</span> name<span class="op">:</span> <span class="str">&#39;cls&#39;</span><span class="op">,</span> value<span class="op">:</span> <span class="keyword">new</span> test<span class="op">() },</span><br />
+                    <span class="op">];</span><br />
+                    <br />
+
+                    <a class="scode word" href="core_cout_sout.htm#intro">cout</a><span class="op">(</span><br />
+                        &nbsp;&nbsp;&nbsp;&nbsp;<span class="str">&#39;\n\n&#39;</span> <span class="op">+</span><br />
+                        &nbsp;&nbsp;&nbsp;&nbsp;<span class="str">&#39; Name &#39;</span><span class="op">.</span><a class="scode" href="core_String.htm#Pad">Pad</a><span class="op">(</span><span class="int">8</span><span class="op">,</span> <span class="str">&#39;=&#39;</span><span class="op">)</span> <span class="op">+</span> <span class="str">&#39;|&#39;</span> <span class="op">+</span><br />
+                        &nbsp;&nbsp;&nbsp;&nbsp;<span class="str">&#39; value type &#39;</span><span class="op">.</span><a class="scode" href="core_String.htm#Pad">Pad</a><span class="op">(</span><span class="int">71</span><span class="op">,</span> <span class="str">&#39;=&#39;</span><span class="op">)</span> <span class="op">+</span><br />
+
+                        &nbsp;&nbsp;&nbsp;&nbsp;<span class="str">&#39;|&#39;</span><span class="op">.</span><a class="scode" href="core_String.htm#PadL">PadL</a><span class="op">(</span><span class="int">9</span><span class="op">,</span> <span class="str">&#39; &#39;</span><span class="op">)</span> <span class="op">+</span><br />
+                        &nbsp;&nbsp;&nbsp;&nbsp;<span class="str">&#39;typeof&#39;</span><span class="op">.</span><a class="scode" href="core_String.htm#Pad">Pad</a><span class="op">(</span><span class="int">23</span><span class="op">,</span> <span class="str">&#39; &#39;</span><span class="op">)</span> <span class="op">+</span> <span class="str">&#39;|&#39;</span> <span class="op">+</span><br />
+                        &nbsp;&nbsp;&nbsp;&nbsp;<span class="str">&#39;typeOf&#39;</span><span class="op">.</span><a class="scode" href="core_String.htm#Pad">Pad</a><span class="op">(</span><span class="int">23</span><span class="op">,</span> <span class="str">&#39; &#39;</span><span class="op">)</span> <span class="op">+</span> <span class="str">&#39;|&#39;</span> <span class="op">+</span><br />
+                        &nbsp;&nbsp;&nbsp;&nbsp;<span class="str">&#39;TypeOf&#39;</span><span class="op">.</span><a class="scode" href="core_String.htm#Pad">Pad</a><span class="op">(</span><span class="int">23</span><span class="op">,</span> <span class="str">&#39; &#39;</span><span class="op">)</span> <span class="op">+</span><br />
+                        &nbsp;&nbsp;&nbsp;&nbsp;<span class="str">&#39;-&#39;</span><span class="op">.</span><a class="scode" href="core_String.htm#Pad">Pad</a><span class="op">(</span><span class="int">79</span><span class="op">,</span> <span class="str">&#39;-&#39;</span><span class="op">)</span><br />
+                    <span class="op">);</span><br />
+
+
+
+
+                    <span class="keyword">for</span><span class="op">(</span>lp <span class="op">=</span> <span class="int">0</span><span class="op">;</span> lp <span class="op"><</span> <span class="int">6</span><span class="op">;</span> lp<span class="op">++) {</span><br />
+                        &nbsp;&nbsp;&nbsp;&nbsp;<a class="scode word" href="core_cout_sout.htm#intro2">sout</a><span class="op">(</span><span class="str">&#39; &#39;</span> <span class="op">+</span> v1<span class="op">[</span>lp<span class="op">].</span>name<span class="op">.</span><a class="scode" href="core_String.htm#PadR">PadR</a><span class="op">(</span><span class="int">7</span><span class="op">,</span> <span class="str">&#39; &#39;</span><span class="op">) + </span><span class="str">&#39;|&#39;</span><span class="op">);</span><br />
+                        &nbsp;&nbsp;&nbsp;&nbsp;<a class="scode word" href="core_cout_sout.htm#intro2">sout</a><span class="op">(</span><span class="str">&#39; &#39;</span> <span class="op">+</span> <span class="op">(</span><span class="keyword">typeof</span> v1<span class="op">[</span>lp<span class="op">].</span>value<span class="op">).</span><a class="scode" href="core_String.htm#PadR">PadR</a><span class="op">(</span><span class="int">22</span><span class="op">,</span> <span class="str">&#39; &#39;</span><span class="op">) + </span><span class="str">&#39;|&#39;</span><span class="op">);</span><br />
+                        &nbsp;&nbsp;&nbsp;&nbsp;<a class="scode word" href="core_cout_sout.htm#intro2">sout</a><span class="op">(</span><span class="str">&#39; &#39;</span> <span class="op">+</span> typeOf<span class="op">(</span>v1<span class="op">[</span>lp<span class="op">].</span>value<span class="op">).</span><a class="scode" href="core_String.htm#PadR">PadR</a><span class="op">(</span><span class="int">22</span><span class="op">,</span> <span class="str">&#39; &#39;</span><span class="op">) + </span><span class="str">&#39;|&#39;</span><span class="op">);</span><br />
+                        &nbsp;&nbsp;&nbsp;&nbsp;<a class="scode word" href="core_cout_sout.htm#intro2">sout</a><span class="op">(</span><span class="str">&#39; &#39;</span> <span class="op">+</span> TypeOf<span class="op">(</span>v1<span class="op">[</span>lp<span class="op">].</span>value<span class="op">).</span><a class="scode" href="core_String.htm#PadR">PadR</a><span class="op">(</span><span class="int">22</span><span class="op">,</span> <span class="str">&#39; &#39;</span><span class="op">)<span class="op">);</span><br />
+                    <span class="op">}</span><br />
+
+
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+
+                </div><br />
+        <br />
+        <span class="topic" id="SeeAlso">See Also</span><a class="TOP" href="#TOP">&nbsp;&nbsp;</a><hr />
+            <ul class="UL">
+                <li><span class="title" id="seeAlso_core"><a href="core.htm">core</a><a class="TOP" href="#TOP">&nbsp;&nbsp;</a></span>
+                    <ul class="UL">
+                        <li><span class="title"><a href="core_Class.htm">Class</a></span></li>
+                        <li><span class="title"><a href="core_ClassInstance.htm">Class Instance</a></span></li>
+                        <li><span class="title"><a href="core_cout_sout.htm#intro">cout</a></span></li>
+                        <li><span class="title"><a href="core_cout_sout.htm#intro2">sout</a></span></li>
+                    </ul>
+                </li>
+                <li><span class="title" id="seeAlso_general">General</span><a class="TOP" href="#TOP">&nbsp;&nbsp;</a>
+                    <ul class="UL">
+                        <li><span class="title"><a href="Contents.htm">Contents</a></span></li>
+                    </ul>
+                </li>
+            </ul>
+
+    </div>
+    </body>
+</html>

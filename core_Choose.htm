@@ -1,0 +1,444 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head>
+    <title></title>
+    <style>﻿.TAB1{
+    display:inline-block; width:30px;
+}
+body
+{
+}
+.header{height: auto;width: 100%;}
+
+#main{height: auto;}
+
+.TOP{
+    display:inline;
+    position:relative;
+    padding: 0 6px 0 6px;
+    width:120px;
+    height:12px;
+    background-image:url(TOP.png);
+    background-position:right center;
+    background-repeat:no-repeat;
+    top:-2px;
+    margin-left:14px;
+    text-decoration:none;
+}
+.scode{
+    display:inline;
+    position:relative;
+    color:Black;
+    font-size:medium;
+    font-style:normal;
+    text-decoration:underline;
+}
+.contents{
+    padding: 6px 12px 6px 12px;
+    margin: 10px 20px 10px 20px;
+    background-color: #FFFFEA;
+    border: solid 1px Silver;
+    font-size: medium;
+}
+.code,.codeline{
+    background-color: #CCFFFF;
+    border:solid 1px Silver;
+}
+.code{
+    font-size: medium;
+    padding: 6px 12px 6px 12px;
+    margin: 10px 20px 10px 20px;
+    font-family:COURIER;
+}
+.codeline{
+    display :inline-block;
+    padding: 4px 12px 4px 12px;
+    margin:0,0,0,0;
+}
+.subTopic{
+    font-size: 14pt;
+    font-weight: bold;
+}
+.topic{
+    font-size: 24pt;
+    font-weight: bold;
+}
+.word{
+    font-weight: bold;
+}
+.code .keyword{
+    color: #0033CC;
+    font-weight: bolder;
+}
+.code .op{
+    color: #0033CC;
+    font-weight: bolder;
+}
+.code .comma{
+    font-weight: bold;
+    margin-right: 6px;
+    margin-left: 6px;
+    font-family: Courier;
+}
+.code .scol{
+    color: #0033CC;
+    font-weight: bold;
+}
+.commentLine{
+    color: #009900;
+    font-size:medium;
+    font-weight:normal;
+}
+.code .str{
+    color: #CC0000;
+}
+.code .colon{
+    color: #0000FF;
+    font-weight: 900;
+    font-size: large;
+}
+.code .optionalArgs{
+    background-color: #FFFF99;
+}
+.code .vari{
+    color: #CC00FF;
+}
+.comments{
+    margin: 18px 8px 6px 8px;
+    position: relative;
+    padding: 6px;
+    background-color: #F0F0F0;
+    top: 0px;
+    left: 1px;
+}
+
+ul.UL{
+
+}
+
+/*ul.UL > li > span > .title{*/
+ul.UL > li .title{
+    font-size: large;
+    font-weight: bold;
+}
+
+.header .help{
+    position: absolute;
+    width: auto;
+    height: auto;
+    top: 4px;
+    left: 8px;
+    color:Red;
+    /*text-decoration:blink;*/
+    text-align:left;
+    font-size:large;
+}
+.header .copyright{
+    position: absolute;
+    width: auto;
+    height: auto;
+    top: 14px;
+    right: 8px;
+    text-align: right;
+    font-size:larger;
+}
+.header .website{
+    position: absolute;
+    width: auto;
+    height: auto;
+    top: -12px;
+    right: 8px;
+    text-align: right;
+    font-size:larger;
+}
+.header .titleLinks{
+    margin-top: -4px;
+    text-align: center;
+    font-size: x-large;
+}
+.header .slogan{
+    margin-top: -22px;
+    text-align: center;
+    font-size: large;
+}
+.header .HR{
+    margin-top: -12px;
+}
+.dollar{color: #E67300;}
+
+.int{color:Green}
+
+.table {
+    position:relative;
+    width: 100%;
+    left:20px;
+    border-color:Black;
+    border-style: double;
+    border-width: 2px;
+}
+
+.table tr {}
+
+.table tr td {
+    border-bottom-width: 1px;
+    border-bottom-style:dashed;
+}
+.table tr td.header {
+    border-bottom-width: 2px;
+    border-bottom-style: double;
+    text-align:center;
+    font-weight:bold;
+}
+.table tr td.name { 
+    padding-left:12px;
+    font-size: medium;
+    font-family:COURIER;
+}
+.table tr td.result {
+    text-align:center;
+    font-weight:bolder;
+    border-color:Black;
+}
+.table tr td.result.error{color:Red;}
+.table tr td.result.good{color:Green;}
+
+
+
+
+
+
+</style>
+</head>
+<body id="TOP">
+    <div id="header" class="header">
+        <p class="titleLinks">
+            <a href="Contents.htm">Pops Documentatin</a>
+            <span> : </span> 
+            <a href="core.htm">core</a>
+            <span> : </span> 
+            <a href="core_Choose.htm">Choose</a>
+        </p>
+        <p class="slogan">A Framework For Node.JS</p>
+        <a class="help" href="help.htm">help</a>
+        <div class="website"><p><a href="https://sites.google.com/site/popsnode/">Pops Website</a></p></div>
+        <div class="copyright"><p>(c) 2012 Erin Bradford</p></div>
+        <hr class="HR" />
+    </div>
+    <div id="main">
+        <span class="subTopic" id="intro">core.Choose</span>&nbsp;&nbsp;&nbsp;&nbsp;(function)<a class="TOP" href="#TOP">&nbsp;&nbsp;</a><br />
+            &nbsp;&nbsp;&nbsp;&nbsp;The &#39;Choose&#39; function returns a result from &#39;choices&#39; based on the &#39;choice&#39; argument. The &#39;choices&#39; argument is an object, where the members are the choices. When 'choice' matches the name of one of the members of 'choices', it will return that members' value.<br />
+        <br />
+        <span class="subTopic" id="general_file">File</span><a class="TOP" href="#TOP">&nbsp;&nbsp;</a><br />
+            &nbsp;&nbsp;&nbsp;&nbsp;pops/pops.core.js<br />
+        <br />
+        <span class="subTopic" id="syntax">Syntax</span><a class="TOP" href="#TOP">&nbsp;&nbsp;</a><br />
+            <div class="code">
+                <span class="keyword">var</span> foo <span class="op">=</span> <span class="word">Choose</span><span class="op">(</span><span class="vari">choice</span><span class="comma">,</span> <span class="vari">choices</span><span class="op">)</span><span class="scol">;</span>
+                <div class="comments">
+                    <ul class="UL">
+                        <li><span class="title">choice :</span> A string value representing your choice.</span></span></li>
+                        <li><span class="title"><a href="#choices">choices</a> :</span> An object containing the choice values. Each member is a choice, it's name is the choice's name. You can use multiple choice names for a single choice using the 'or' operator (_?_).</li>
+                    </ul>
+                </div>
+            </div>
+        <br />
+
+        <span class="subTopic" id="contents">Contents</span><a class="TOP" href="#TOP">&nbsp;&nbsp;</a><br />
+            <div class="contents">
+                <ul class="UL">
+                    <li><span class="title"><a href="#main">General</a></span>
+                        <ul class="UL">
+                            <li><span class="title"><a href="#intro">core.Choose</a></span></li>
+                            <li><span class="title"><a href="#general_file">File</a></span></li>
+                            <li><span class="title"><a href="#syntax">Syntax</a></span></li>
+                            <li><span class="title"><a href="#contents">Contents</a></span></li>
+                        </ul>
+                    </li>
+                    <li><span class="title"><a href="#choices">Choices</a></span>
+                        <ul class="UL">
+                            <li><span class="title"><a href="#choices_else"><span class="dollar">$</span>else</a></span></li>
+                            <li><span class="title"><a href="#choices_run"><span class="dollar">$</span>run</a></span></li>
+                        </ul>
+                    </li>
+                    <li><span class="title"><a href="#namingSyntax">Naming syntax</a></span>
+                        <ul class="UL">
+                            <li><span class="title"><a href="#namingSyntax_or">_or_</a></span></li>
+                        </ul>
+                    </li>
+                    <li><span class="title"><a href="#examples">Examples</a></span>
+                        <ul class="UL">
+                            <li><span class="title"><a href="#examples_Choose">Choose</a></span></li>
+                            <li><span class="title"><a href="#examples_else"><span class="dollar">$</span>else</a></span></li>
+                            <li><span class="title"><a href="#examples_run"><span class="dollar">$</span>run</a></span></li>
+                            <li><span class="title"><a href="#examples_or">_or_</a></span></li>
+                        </ul>
+                    </li>
+                    <li><span class="title"><a href="#SeeAlso">See Also</a></span>
+                        <ul class="UL">
+                            <li><span class="title"><a href="#seeAlso_core">core</a></span></li>
+                            <li><span class="title"><a href="#seeAlso_general">General</a></span></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+
+        <span class="topic" id="choices">Choices</span><a class="TOP" href="#TOP">&nbsp;&nbsp;</a><hr />
+            <ul class="UL">
+                <li><span class="title" id="choices_else"><span class="dollar">$</span>else:</span> The value of this member will be returned if no choices can be matched.<a class="TOP" href="#TOP">&nbsp;&nbsp;</a><br />
+                    <div class="code">
+                        <span class="word"><span class="dollar">$</span>else</span><span class="colon">:</span> <span class="vari">val</span><span class="comma">,</span>
+                        <div class="comments">
+                            <ul class="UL">
+                                <li><span class="title">val : </span>Any value.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+                <li><span class="title" id="choices_run"><span class="dollar">$</span>run:</span> If set to true, and the resulting value is a function, Choose will run the function and return the result rather than returning the function itself.<a class="TOP" href="#TOP">&nbsp;&nbsp;</a><br />
+                    <div class="code">
+                        <span class="word"><span class="dollar">$</span>run</span><span class="colon">:</span> <span class="keyword">true</span><span class="comma">,</span>
+                        <br />
+                    </div>
+                </li>
+            </ul>
+
+        <span class="topic" id="namingSyntax">Naming syntax</span><a class="TOP" href="#TOP">&nbsp;&nbsp;</a><hr />
+            &nbsp;&nbsp;&nbsp;&nbsp;Naming a choice is like naming a variable, the same rules apply.<br />
+            <br />
+            <table class="table" style="width:300px;">
+                <tr>
+                    <td class="header">Name</td>
+                    <td class="header">&nbsp;&nbsp;&nbsp;&nbsp;Result&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                </tr>
+                <tr><td class="name">myChoice</td><td class="result good">good</td></tr>
+                <tr><td class="name">my Choice</td><td class="result error">error</td></tr>
+                <tr><td class="name">myChoice2</td><td class="result good">good</td></tr>
+                <tr><td class="name">2myChoice</td><td class="result error">error</td></tr>
+                <tr><td class="name">my_Choice</td><td class="result good">good</td></tr>
+                <tr><td class="name">$myChoice</td><td class="result good">good</td></tr>
+                <tr><td class="name">my@Choice</td><td class="result error">error</td></tr>
+                <tr><td class="name">?myChoice</td><td class="result error">error</td></tr>
+            </table>
+            <br />
+            <span class="subTopic" id="namingSyntax_or">_or_</span><a class="TOP" href="#TOP">&nbsp;&nbsp;</a><br />
+                &nbsp;&nbsp;&nbsp;&nbsp;Use &nbsp;_or_&nbsp; to set a single value to multiple choices.
+                <div class="code">
+                    Choice1<span class="word">_or_</span>Choice2<span class="word">_or_</span>MyChoice<span class="colon">:</span> <span class="vari">val</span><span class="comma">,</span>
+                    <div class="comments">
+                        <ul class="UL">
+                            <li><span class="title">Choice1, Choice2, MyChoice : </span>These are choice names.</li>
+                            <li><span class="title">val : </span>Any value.</li>
+                        </ul>
+                    </div>
+                </div>
+            <br />
+
+
+
+        <span class="topic" id="examples">Examples</span><a class="TOP" href="#TOP">&nbsp;&nbsp;</a><hr />
+            <span class="subTopic" id="examples_Choose">Choose</span><a class="TOP" href="#TOP">&nbsp;&nbsp;</a><br />
+                <div class="code">
+                    <span class="keyword">require</span><span class="op">(</span><span class="str">&#39;pops/pops.loader&#39;</span><span class="op">)</span><span class="comma">.</span><a class="scode" href="loader.htm#func_Load">Load</a><span class="op">()</span><span class="scol">;</span><br />
+                    <br />
+                    <span class="keyword">var</span> choice <span class="op">=</span> <span class="str">&#39;choice2&#39;</span><span class="op">;</span><br />
+                    <br />
+                    <span class="keyword">var</span> result <span class="op">=</span> <a class="scode word" href="#intro">Choose</a><span class="op">(</span>choice<span class="op">, {</span><br />
+                        &nbsp;&nbsp;&nbsp;&nbsp;choice1<span class="op">:</span> <span class="str">&#39;- Choice 1 -&#39;</span><span class="op">,</span><br />
+                        &nbsp;&nbsp;&nbsp;&nbsp;choice2<span class="op">:</span> <span class="str">&#39;- Choice 2 -&#39;</span><span class="op">,</span><br />
+                        &nbsp;&nbsp;&nbsp;&nbsp;choice3<span class="op">:</span> <span class="str">&#39;- Choice 3 -&#39;</span><span class="op">,</span><br />
+                        &nbsp;&nbsp;&nbsp;&nbsp;choice4<span class="op">:</span> <span class="str">&#39;- Choice 4 -&#39;</span><br />
+                    <span class="op">});</span><br />
+                    <br />
+                    <a class="scode" href="core_cout_sout.htm#intro">cout</a><span class="op">(</span>result<span class="op">);</span>
+                </div><br />
+            <br />
+
+            <span class="subTopic" id="examples_else"><span class="dollar">$</span>else</span><a class="TOP" href="#TOP">&nbsp;&nbsp;</a><br />
+                <div class="code">
+                    <span class="keyword">require</span><span class="op">(</span><span class="str">&#39;pops/pops.loader&#39;</span><span class="op">)</span><span class="comma">.</span><a class="scode" href="loader.htm#func_Load">Load</a><span class="op">()</span><span class="scol">;</span><br />
+                    <br />
+                    <span class="keyword">var</span> choices <span class="op">=</span> <span class="op">{</span><br />
+                        &nbsp;&nbsp;&nbsp;&nbsp;choice1<span class="op">:</span> <span class="str">&#39;- Choice 1 -&#39;</span><span class="op">,</span><br />
+                        &nbsp;&nbsp;&nbsp;&nbsp;choice2<span class="op">:</span> <span class="str">&#39;- Choice 2 -&#39;</span><span class="op">,</span><br />
+                        &nbsp;&nbsp;&nbsp;&nbsp;<span class="dollar">$</span>else<span class="op">:</span> <span class="str">&#39;- Else -&#39;</span><span class="op">,</span><br />
+                    <span class="op">};</span><br />
+                    <br />
+
+                    <a class="scode" href="core_cout_sout.htm#intro">cout</a><span class="op">(</span><a class="scode word" href="#intro">Choose</a><span class="op">(</span><span class="str">&#39;choice2&#39;</span><span class="op">,</span> choices<span class="op">)</span><span class="op">);</span><br />
+                    <a class="scode" href="core_cout_sout.htm#intro">cout</a><span class="op">(</span><a class="scode word" href="#intro">Choose</a><span class="op">(</span><span class="str">&#39;choice6&#39;</span><span class="op">,</span> choices<span class="op">)</span><span class="op">);</span><br />
+                    <a class="scode" href="core_cout_sout.htm#intro">cout</a><span class="op">(</span><a class="scode word" href="#intro">Choose</a><span class="op">(</span><span class="str">&#39;choice1&#39;</span><span class="op">,</span> choices<span class="op">)</span><span class="op">);</span><br />
+                </div><br />
+            <br />
+
+            <span class="subTopic" id="examples_run"><span class="dollar">$</span>run</span><a class="TOP" href="#TOP">&nbsp;&nbsp;</a><br />
+                <div class="code">
+                    <span class="keyword">require</span><span class="op">(</span><span class="str">&#39;pops/pops.loader&#39;</span><span class="op">)</span><span class="comma">.</span><a class="scode" href="loader.htm#func_Load">Load</a><span class="op">()</span><span class="scol">;</span><br />
+                    <br />
+                    <span class="keyword">var</span> choices <span class="op">=</span> <span class="op">{</span><br />
+                        &nbsp;&nbsp;&nbsp;&nbsp;foo<span class="op">:</span> <a class="scode keyword" href="function.htm">function</a><span class="op">(</span><span class="op">) {</span> <span class="keyword">return</span> <span class="str">&#39;FOO!&#39;</span><span class="op">; },</span><br />
+                        &nbsp;&nbsp;&nbsp;&nbsp;Bar<span class="op">:</span> <span class="str">&#39;BAR!&#39;</span><span class="op">,</span><br />
+                        &nbsp;&nbsp;&nbsp;&nbsp;hELLo<span class="op">:</span> <a class="scode keyword" href="function.htm">function</a><span class="op">(</span><span class="op">) {</span> <span class="keyword">return</span> <span class="str">&#39;HELLO!&#39;</span><span class="op">; },</span><br />
+                        &nbsp;&nbsp;&nbsp;&nbsp;world<span class="op">:</span> <a class="scode keyword" href="function.htm">function</a><span class="op">(</span><span class="op">) {</span> <span class="keyword">return</span> <a class="scode keyword" href="function.htm">function</a><span class="op">(</span><span class="op">) {</span> <span class="keyword">return</span> <span class="str">&#39;WORLD!&#39;</span><span class="op">;</span><span class="op"> } },</span><br />
+                    <span class="op">};</span><br />
+                    <br />
+                    <span class="keyword">var</span> choices2 <span class="op">=</span> <span class="op">{</span><br />
+                        &nbsp;&nbsp;&nbsp;&nbsp;<a class="scode" href="#choices_run "><span class="dollar">$</span>run</a><span class="op">:</span> <span class="keyword">true</span><span class="op">,</span><br />
+                        &nbsp;&nbsp;&nbsp;&nbsp;foo<span class="op">:</span> <a class="scode keyword" href="function.htm">function</a><span class="op">(</span><span class="op">) {</span> <span class="keyword">return</span> <span class="str">&#39;FOO!&#39;</span><span class="op">; },</span><br />
+                        &nbsp;&nbsp;&nbsp;&nbsp;Bar<span class="op">:</span> <span class="str">&#39;BAR!&#39;</span><span class="op">,</span><br />
+                        &nbsp;&nbsp;&nbsp;&nbsp;hELLo<span class="op">:</span> <a class="scode keyword" href="function.htm">function</a><span class="op">(</span><span class="op">) {</span> <span class="keyword">return</span> <span class="str">&#39;HELLO!&#39;</span><span class="op">; },</span><br />
+                        &nbsp;&nbsp;&nbsp;&nbsp;world<span class="op">:</span> <a class="scode keyword" href="function.htm">function</a><span class="op">(</span><span class="op">) {</span> <span class="keyword">return</span> <a class="scode keyword" href="function.htm">function</a><span class="op">(</span><span class="op">) {</span> <span class="keyword">return</span> <span class="str">&#39;WORLD!&#39;</span><span class="op">;</span><span class="op"> } },</span><br />
+                    <span class="op">};</span><br />
+                    <br />
+                    <a class="scode" href="core_cout_sout.htm#intro">cout</a><span class="op">(</span><a class="scode word" href="#intro">Choose</a><span class="op">(</span><span class="str">&#39;Foo&#39;</span><span class="op">,</span> choices<span class="op">)</span><span class="op">);</span><br />
+                    <a class="scode" href="core_cout_sout.htm#intro">cout</a><span class="op">(</span><a class="scode word" href="#intro">Choose</a><span class="op">(</span><span class="str">&#39;Bar&#39;</span><span class="op">,</span> choices<span class="op">)</span><span class="op">);</span><br />
+                    <a class="scode" href="core_cout_sout.htm#intro">cout</a><span class="op">(</span><a class="scode word" href="#intro">Choose</a><span class="op">(</span><span class="str">&#39;hello&#39;</span><span class="op">,</span> choices<span class="op">)</span><span class="op">);</span><br />
+                    <a class="scode" href="core_cout_sout.htm#intro">cout</a><span class="op">(</span><a class="scode word" href="#intro">Choose</a><span class="op">(</span><span class="str">&#39;wORLd&#39;</span><span class="op">,</span> choices<span class="op">)</span><span class="op">);</span><br />
+                    <br />
+                    <a class="scode" href="core_cout_sout.htm#intro">cout</a><span class="op">(</span><span class="op">);</span><br />
+                    <br />
+                    <a class="scode" href="core_cout_sout.htm#intro">cout</a><span class="op">(</span><a class="scode word" href="#intro">Choose</a><span class="op">(</span><span class="str">&#39;Foo&#39;</span><span class="op">,</span> choices2<span class="op">)</span><span class="op">);</span><br />
+                    <a class="scode" href="core_cout_sout.htm#intro">cout</a><span class="op">(</span><a class="scode word" href="#intro">Choose</a><span class="op">(</span><span class="str">&#39;Bar&#39;</span><span class="op">,</span> choices2<span class="op">)</span><span class="op">);</span><br />
+                    <a class="scode" href="core_cout_sout.htm#intro">cout</a><span class="op">(</span><a class="scode word" href="#intro">Choose</a><span class="op">(</span><span class="str">&#39;hello&#39;</span><span class="op">,</span> choices2<span class="op">)</span><span class="op">);</span><br />
+                    <a class="scode" href="core_cout_sout.htm#intro">cout</a><span class="op">(</span><a class="scode word" href="#intro">Choose</a><span class="op">(</span><span class="str">&#39;wORLd&#39;</span><span class="op">,</span> choices2<span class="op">)</span><span class="op">);</span><br />
+                </div><br />
+            <br />
+
+            <span class="subTopic" id="examples_or">_or_</span><a class="TOP" href="#TOP">&nbsp;&nbsp;</a><br />
+                <div class="code">
+                    <span class="keyword">require</span><span class="op">(</span><span class="str">&#39;pops/pops.loader&#39;</span><span class="op">)</span><span class="comma">.</span><a class="scode" href="loader.htm#func_Load">Load</a><span class="op">()</span><span class="scol">;</span><br />
+                    <br />
+                    <span class="keyword">var</span> choices <span class="op">=</span> <span class="op">{</span><br />
+                        &nbsp;&nbsp;&nbsp;&nbsp;choice1<span class="op">:</span> <span class="str">&#39;- Choice 1 -&#39;</span><span class="op">,</span><br />
+                        &nbsp;&nbsp;&nbsp;&nbsp;choice2_or_choice3<span class="op">:</span> <span class="str">&#39;- Choice 2 & 3 -&#39;</span><span class="op">,</span><br />
+                        &nbsp;&nbsp;&nbsp;&nbsp;choice4<span class="op">:</span> <span class="str">&#39;- Choice 4 -&#39;</span><span class="op">,</span><br />
+                    <span class="op">};</span><br />
+                    <br />
+
+                    <a class="scode" href="core_cout_sout.htm#intro">cout</a><span class="op">(</span><a class="scode word" href="#intro">Choose</a><span class="op">(</span><span class="str">&#39;choice1&#39;</span><span class="op">,</span> choices<span class="op">)</span><span class="op">);</span><br />
+                    <a class="scode" href="core_cout_sout.htm#intro">cout</a><span class="op">(</span><a class="scode word" href="#intro">Choose</a><span class="op">(</span><span class="str">&#39;choice2&#39;</span><span class="op">,</span> choices<span class="op">)</span><span class="op">);</span><br />
+                    <a class="scode" href="core_cout_sout.htm#intro">cout</a><span class="op">(</span><a class="scode word" href="#intro">Choose</a><span class="op">(</span><span class="str">&#39;choice3&#39;</span><span class="op">,</span> choices<span class="op">)</span><span class="op">);</span><br />
+                    <a class="scode" href="core_cout_sout.htm#intro">cout</a><span class="op">(</span><a class="scode word" href="#intro">Choose</a><span class="op">(</span><span class="str">&#39;choice4&#39;</span><span class="op">,</span> choices<span class="op">)</span><span class="op">);</span><br />
+                </div><br />
+            <br />
+
+        <span class="topic" id="SeeAlso">See Also</span><a class="TOP" href="#TOP">&nbsp;&nbsp;</a><hr />
+            <ul class="UL">
+                <li><span class="title" id="seeAlso_core"><a href="core.htm">core</a></span><a class="TOP" href="#TOP">&nbsp;&nbsp;</a>
+                    <ul class="UL">
+                        <li><span class="title"><a href="core_cout_sout.htm">cout</a></span></li>
+                        <li><span class="title"><a href="core_IsMode.htm">IsMode</a></span></li>
+                        <li><span class="title"><a href="core_Modal.htm">Modal</a></span></li>
+                        <li><span class="title"><a href="core_Mode.htm">Mode</a></span></li>
+                        <li><span class="title"><a href="core_Modes.htm">Modes</a></span></li>
+                    </ul>
+                </li>
+                <li><span class="title" id="seeAlso_general">General</span><a class="TOP" href="#TOP">&nbsp;&nbsp;</a>
+                    <ul class="UL">
+                        <li><span class="title"><a href="Contents.htm">Contents</a></span></li>
+                    </ul>
+                </li>
+            </ul>
+
+    </div>
+    </body>
+</html>
