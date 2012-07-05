@@ -62,7 +62,7 @@ body
 .word{
     font-weight: bold;
 }
-.code .keyword{
+.code .keyword, .keyword{
     color: #0033CC;
     font-weight: bolder;
 }
@@ -71,16 +71,17 @@ body
     font-weight: bolder;
 }
 .code .comma{
+    color: #0033CC;
     font-weight: bold;
-    margin-right: 6px;
-    margin-left: 6px;
+    margin-right: 2px;
+    margin-left: 2px;
     font-family: Courier;
 }
 .code .scol{
     color: #0033CC;
     font-weight: bold;
 }
-.commentLine{
+.commentLine,.commentBlock{
     color: #009900;
     font-size:medium;
     font-weight:normal;
@@ -172,6 +173,10 @@ ul.UL > li .title{
     border-style: double;
     border-width: 2px;
 }
+.table.argSyntax {
+    width: 822px;
+    top: 0px;
+}
 
 .table tr {}
 
@@ -197,6 +202,12 @@ ul.UL > li .title{
 }
 .table tr td.result.error{color:Red;}
 .table tr td.result.good{color:Green;}
+
+.table.argSyntax tr td.name {width:140px;}
+.table.argSyntax tr td.result{width:240px;}
+.table tr td.result.match {font-weight:normal;}
+
+.table tr td.result.match {font-weight:normal;}
 
 
 

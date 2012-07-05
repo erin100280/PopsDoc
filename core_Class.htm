@@ -2,217 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" >
 <head>
     <title></title>
-    <style>﻿.TAB1{
-    display:inline-block; width:30px;
-}
-body
-{
-}
-.header{height: auto;width: 100%;}
-
-#main{height: auto;}
-
-.TOP{
-    display:inline;
-    position:relative;
-    padding: 0 6px 0 6px;
-    width:120px;
-    height:12px;
-    background-image:url(TOP.png);
-    background-position:right center;
-    background-repeat:no-repeat;
-    top:-2px;
-    margin-left:14px;
-    text-decoration:none;
-}
-.scode{
-    display:inline;
-    position:relative;
-    color:Black;
-    font-size:medium;
-    font-style:normal;
-    text-decoration:underline;
-}
-.contents{
-    padding: 6px 12px 6px 12px;
-    margin: 10px 20px 10px 20px;
-    background-color: #FFFFEA;
-    border: solid 1px Silver;
-    font-size: medium;
-}
-.code,.codeline{
-    background-color: #CCFFFF;
-    border:solid 1px Silver;
-}
-.code{
-    font-size: medium;
-    padding: 6px 12px 6px 12px;
-    margin: 10px 20px 10px 20px;
-    font-family:COURIER;
-}
-.codeline{
-    display :inline-block;
-    padding: 4px 12px 4px 12px;
-    margin:0,0,0,0;
-}
-.subTopic{
-    font-size: 14pt;
-    font-weight: bold;
-}
-.topic{
-    font-size: 24pt;
-    font-weight: bold;
-}
-.word{
-    font-weight: bold;
-}
-.code .keyword{
-    color: #0033CC;
-    font-weight: bolder;
-}
-.code .op{
-    color: #0033CC;
-    font-weight: bolder;
-}
-.code .comma{
-    font-weight: bold;
-    margin-right: 6px;
-    margin-left: 6px;
-    font-family: Courier;
-}
-.code .scol{
-    color: #0033CC;
-    font-weight: bold;
-}
-.commentLine{
-    color: #009900;
-    font-size:medium;
-    font-weight:normal;
-}
-.code .str{
-    color: #CC0000;
-}
-.code .colon{
-    color: #0000FF;
-    font-weight: 900;
-    font-size: large;
-}
-.code .optionalArgs{
-    background-color: #FFFF99;
-}
-.code .vari{
-    color: #CC00FF;
-}
-.comments{
-    margin: 18px 8px 6px 8px;
-    position: relative;
-    padding: 6px;
-    background-color: #F0F0F0;
-    top: 0px;
-    left: 1px;
-}
-
-ul.UL{
-
-}
-
-/*ul.UL > li > span > .title{*/
-ul.UL > li .title{
-    font-size: large;
-    font-weight: bold;
-}
-
-.header .help{
-    position: absolute;
-    width: auto;
-    height: auto;
-    top: 4px;
-    left: 8px;
-    color:Red;
-    /*text-decoration:blink;*/
-    text-align:left;
-    font-size:large;
-}
-.header .copyright{
-    position: absolute;
-    width: auto;
-    height: auto;
-    top: 14px;
-    right: 8px;
-    text-align: right;
-    font-size:larger;
-}
-.header .website{
-    position: absolute;
-    width: auto;
-    height: auto;
-    top: -12px;
-    right: 8px;
-    text-align: right;
-    font-size:larger;
-}
-.header .titleLinks{
-    margin-top: -4px;
-    text-align: center;
-    font-size: x-large;
-}
-.header .slogan{
-    margin-top: -22px;
-    text-align: center;
-    font-size: large;
-}
-.header .HR{
-    margin-top: -12px;
-}
-.dollar{color: #E67300;}
-
-.int{color:Green}
-
-.table {
-    position:relative;
-    width: 100%;
-    left:20px;
-    border-color:Black;
-    border-style: double;
-    border-width: 2px;
-}
-
-.table tr {}
-
-.table tr td {
-    border-bottom-width: 1px;
-    border-bottom-style:dashed;
-}
-.table tr td.header {
-    border-bottom-width: 2px;
-    border-bottom-style: double;
-    text-align:center;
-    font-weight:bold;
-}
-.table tr td.name { 
-    padding-left:12px;
-    font-size: medium;
-    font-family:COURIER;
-}
-.table tr td.result {
-    text-align:center;
-    font-weight:bolder;
-    border-color:Black;
-}
-.table tr td.result.error{color:Red;}
-.table tr td.result.good{color:Green;}
-
-
-
-
-
-
-</style>
+    <link rel="stylesheet" href="PopsDoc.css" type="text//css" media="all" charset="utf-8" />
 </head>
 <body id="TOP">
     <div id="header" class="header">
         <p class="titleLinks">
-            <a href="Contents.htm">Pops Documentatin</a>
+            <a href="Contents.htm">Pops.js Documentatin</a>
             <span> : </span> 
             <a href="core.htm">core</a>
             <span> : </span> 
@@ -261,6 +56,10 @@ ul.UL > li .title{
                             <li><span class="title"><a href="#specs_Extends">Extends</a></span></li>
                             <li><span class="title"><a href="#specs_Implements">Implements</a></span></li>
                             <li><span class="title"><a href="#specs_options">options</a></span></li>
+                            <li><span class="title"><a href="#specs_Private">Private</a></span></li>
+                            <li><span class="title"><a href="#specs_Protected">Protected</a></span></li>
+                            <li><span class="title"><a href="#specs_Shared">Shared</a></span></li>
+                            <li><span class="title"><a href="#specs_PrivShare">PrivShare</a></span></li>
                             <li><span class="title"><a href="#specs_Init">Init</a></span></li>
                             <li><span class="title"><a href="#specs_on">on</a></span></li>
                             <li><span class="title"><a href="#specs__on"><span class="dollar">$</span>on</a></span></li>
@@ -318,6 +117,166 @@ ul.UL > li .title{
                         </div>
                     </div>
                 </li>
+                <li class="bli"><span class="title" id="specs_Private">Private :</span> Allows you to add private variables to a class. Private variables can only be accessed by the class that they belong to.<a class="TOP" href="#TOP">&nbsp;&nbsp;</a>
+                    <div class="code">
+                        <span class="word">Private</span><span class="colon">:</span> <span class="vari">privObj</span><span class="comma">,</span> 
+                        <hr />
+                        _anything_here_<span class="colon">:</span> <span class="word">Private</span><span class="op">(</span><span class="vari">privObj</span><span class="op">)</span><span class="comma">,</span> 
+                        <hr />
+                        _var_name_<span class="colon">:</span> <a class="scode keyword" href="core_function.htm">function</a><span class="op">(</span><span class="op">) {</span> <span class="commentLine">/* some code */</span> <span class="op">}.</span><a class="word scode" href="core_function.htm#members_Private">Private</a><span class="op">()</span><span class="comma">,</span> 
+                        <div class="comments">
+                            <ul class="UL">
+                                <li><span class="title">privObj :</span> All members of this object will be added to the class as private variables. In the following examples, <i>s1</i> and <i>s2</i> will be added to the new class.
+                                    <div class="code">
+                                        <span class="keyword">var</span> foo <span class="op">=</span> <a class="scode word" href="#intro">Class</a><span class="op">(</span><span class="str">&#39;foo&#39;</span><span class="comma">,</span> <span class="op">{</span><br />
+                                            &nbsp;&nbsp;&nbsp;&nbsp;<a class="word scode" href="#specs_Private">Private</a><span class="op">: {</span><br />
+                                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;s1<span class="op">:</span> <span class="str">&#39;*S1*&#39;</span><span class="comma">,</span><br />
+                                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;s2<span class="op">:</span> <a class="scode keyword" href="core_function.htm">function</a><span class="op">(</span><span class="op">) {</span> <span class="keyword">return</span> <span class="str">&#39;*S2*&#39;</span> <span class="op">}</span><br />
+                                            &nbsp;&nbsp;&nbsp;&nbsp;<span class="op">}</span><br />
+                                        <span class="op">})</span><span class="scol">;</span>
+                                    </div>
+                                    <hr />
+                                    <div class="code">
+                                        <span class="keyword">var</span> foo <span class="op">=</span> <a class="scode word" href="#intro">Class</a><span class="op">(</span><span class="str">&#39;foo&#39;</span><span class="comma">,</span> <span class="op">{</span><br />
+                                            &nbsp;&nbsp;&nbsp;&nbsp;myPrivates<span class="op">:</span> <a class="word scode" href="#specs_Private">Private</a><span class="op">({</span><br />
+                                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;s1<span class="op">:</span> <span class="str">&#39;*S1*&#39;</span><span class="comma">,</span><br />
+                                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;s2<span class="op">:</span> <a class="scode keyword" href="core_function.htm">function</a><span class="op">(</span><span class="op">) {</span> <span class="keyword">return</span> <span class="str">&#39;*S2*&#39;</span> <span class="op">}</span><br />
+                                            &nbsp;&nbsp;&nbsp;&nbsp;<span class="op">})</span><br />
+                                        <span class="op">})</span><span class="scol">;</span>
+                                    </div>
+                                </li>
+                                <li class="bli">individually (for <a href="core_function.htm">functions</a>, <a href="#intro">classes</a>, <a href="core_type.htm">types</a>, and other function-based objects.)
+                                    <div class="code">
+                                        <span class="keyword">var</span> foo <span class="op">=</span> <a class="scode word" href="#intro">Class</a><span class="op">(</span><span class="str">&#39;foo&#39;</span><span class="comma">,</span> <span class="op">{</span><br />
+                                            &nbsp;&nbsp;&nbsp;&nbsp;s1<span class="op">:</span> <a class="scode keyword" href="core_function.htm">function</a><span class="op">(</span><span class="op">) {</span> <span class="keyword">return</span> <span class="str">&#39;*S1*&#39;</span> <span class="op">}.</span><a class="word scode" href="core_function.htm#members_Private">Private</a><span class="op">()</span><span class="comma">,</span><br />
+                                            &nbsp;&nbsp;&nbsp;&nbsp;s2<span class="op">:</span> <a class="scode keyword" href="core_function.htm">function</a><span class="op">(</span><span class="op">) {</span> <span class="keyword">return</span> <span class="str">&#39;*S2*&#39;</span> <span class="op">}.</span><a class="word scode" href="core_function.htm#members_Private">Private</a><span class="op">()</span><br />
+                                        <span class="op">})</span><span class="scol">;</span>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+                <li class="bli"><span class="title" id="specs_Protected">Protected :</span> Protected functions can be accessed by the class they belong to and classes that extend that class. They can not be accessed outside of that.<a class="TOP" href="#TOP">&nbsp;&nbsp;</a>
+                    <div class="code">
+                        <span class="word">Protected</span><span class="colon">:</span> <span class="vari">protectedObj</span><span class="comma">,</span> 
+                        <hr />
+                        _anything_here_<span class="colon">:</span> <span class="word">Protected</span><span class="op">(</span><span class="vari">protectedObj</span><span class="op">)</span><span class="comma">,</span> 
+                        <hr />
+                        _var_name_<span class="colon">:</span> <a class="scode keyword" href="core_function.htm">function</a><span class="op">(</span><span class="op">) {</span> <span class="commentLine">/* some code */</span> <span class="op">}.</span><a class="word scode" href="core_function.htm#members_Protected">Protected</a><span class="op">()</span><span class="comma">,</span> 
+                        <div class="comments">
+                            <ul class="UL">
+                                <li><span class="title">protectedObj :</span> All members of this object will be added to the class as protected members. In the following examples, <i>s1</i> and <i>s2</i> will be added to the new class.
+                                    <div class="code">
+                                        <span class="keyword">var</span> foo <span class="op">=</span> <a class="scode word" href="#intro">Class</a><span class="op">(</span><span class="str">&#39;foo&#39;</span><span class="comma">,</span> <span class="op">{</span><br />
+                                            &nbsp;&nbsp;&nbsp;&nbsp;<a class="word scode" href="#specs_Protected">Protected</a><span class="op">: {</span><br />
+                                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;s1<span class="op">:</span> <a class="scode keyword" href="core_function.htm">function</a><span class="op">(</span><span class="op">) {</span> <span class="keyword">return</span> <span class="str">&#39;*S1*&#39;</span> <span class="op">},</span><br />
+                                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;s2<span class="op">:</span> <a class="scode keyword" href="core_function.htm">function</a><span class="op">(</span><span class="op">) {</span> <span class="keyword">return</span> <span class="str">&#39;*S2*&#39;</span> <span class="op">}</span><br />
+                                            &nbsp;&nbsp;&nbsp;&nbsp;<span class="op">}</span><br />
+                                        <span class="op">})</span><span class="scol">;</span>
+                                    </div>
+                                    <hr />
+                                    <div class="code">
+                                        <span class="keyword">var</span> foo <span class="op">=</span> <a class="scode word" href="#intro">Class</a><span class="op">(</span><span class="str">&#39;foo&#39;</span><span class="comma">,</span> <span class="op">{</span><br />
+                                            &nbsp;&nbsp;&nbsp;&nbsp;protectedStuff<span class="op">:</span> <a class="word scode" href="#specs_Protected">Protected</a><span class="op">({</span><br />
+                                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;s1<span class="op">:</span> <a class="scode keyword" href="core_function.htm">function</a><span class="op">(</span><span class="op">) {</span> <span class="keyword">return</span> <span class="str">&#39;*S1*&#39;</span> <span class="op">},</span><br />
+                                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;s2<span class="op">:</span> <a class="scode keyword" href="core_function.htm">function</a><span class="op">(</span><span class="op">) {</span> <span class="keyword">return</span> <span class="str">&#39;*S2*&#39;</span> <span class="op">}</span><br />
+                                            &nbsp;&nbsp;&nbsp;&nbsp;<span class="op">})</span><br />
+                                        <span class="op">})</span><span class="scol">;</span>
+                                    </div>
+                                </li>
+                                <li class="bli">individually (for <a href="core_function.htm">functions</a>, <a href="#intro">classes</a>, <a href="core_type.htm">types</a>, and other function-based objects.)
+                                    <div class="code">
+                                        <span class="keyword">var</span> foo <span class="op">=</span> <a class="scode word" href="#intro">Class</a><span class="op">(</span><span class="str">&#39;foo&#39;</span><span class="comma">,</span> <span class="op">{</span><br />
+                                            &nbsp;&nbsp;&nbsp;&nbsp;s1<span class="op">:</span> <a class="scode keyword" href="core_function.htm">function</a><span class="op">(</span><span class="op">) {</span> <span class="keyword">return</span> <span class="str">&#39;*S1*&#39;</span> <span class="op">}.</span><a class="word scode" href="core_function#members_Protected.htm">Protected</a><span class="op">()</span><span class="comma">,</span><br />
+                                            &nbsp;&nbsp;&nbsp;&nbsp;s2<span class="op">:</span> <a class="scode keyword" href="core_function.htm">function</a><span class="op">(</span><span class="op">) {</span> <span class="keyword">return</span> <span class="str">&#39;*S2*&#39;</span> <span class="op">}.</span><a class="word scode" href="core_function#members_Protected.htm">Protected</a><span class="op">()</span><br />
+                                        <span class="op">})</span><span class="scol">;</span>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+                <li class="bli"><span class="title" id="specs_Shared">Shared :</span> These members are accessable from the class itself. You can not access them from an instance of the class..<a class="TOP" href="#TOP">&nbsp;&nbsp;</a>
+                    <div class="code">
+                        <span class="word">Shared</span><span class="colon">:</span> <span class="vari">sharedObj</span><span class="comma">,</span> 
+                        <hr />
+                        _anything_here_<span class="colon">:</span> <span class="word">Shared</span><span class="op">(</span><span class="vari">sharedObj</span><span class="op">)</span><span class="comma">,</span> 
+                        <hr />
+                        _var_name_<span class="colon">:</span> <a class="scode keyword" href="core_function.htm">function</a><span class="op">(</span><span class="op">) {</span> <span class="commentLine">/* some code */</span> <span class="op">}.</span><a class="word scode" href="core_function.htm#members_Shared">Shared</a><span class="op">()</span><span class="comma">,</span> 
+                        <div class="comments">
+                            <ul class="UL">
+                                <li><span class="title">sharedObj :</span> All members of this object will be added to the class as shared members. In the following examples, <i>s1</i> and <i>s2</i> will be added to the new class.
+                                    <div class="code">
+                                        <span class="keyword">var</span> foo <span class="op">=</span> <a class="scode word" href="#intro">Class</a><span class="op">(</span><span class="str">&#39;foo&#39;</span><span class="comma">,</span> <span class="op">{</span><br />
+                                            &nbsp;&nbsp;&nbsp;&nbsp;<a class="word scode" href="#specs_Shared">Shared</a><span class="op">: {</span><br />
+                                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;s1<span class="op">:</span> <span class="str">&#39;*S1*&#39;</span><span class="comma">,</span><br />
+                                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;s2<span class="op">:</span> <a class="scode keyword" href="core_function.htm">function</a><span class="op">(</span><span class="op">) {</span> <span class="keyword">return</span> <span class="str">&#39;*S2*&#39;</span> <span class="op">}</span><br />
+                                            &nbsp;&nbsp;&nbsp;&nbsp;<span class="op">}</span><br />
+                                        <span class="op">})</span><span class="scol">;</span>
+                                    </div>
+                                    <hr />
+                                    <div class="code">
+                                        <span class="keyword">var</span> foo <span class="op">=</span> <a class="scode word" href="#intro">Class</a><span class="op">(</span><span class="str">&#39;foo&#39;</span><span class="comma">,</span> <span class="op">{</span><br />
+                                            &nbsp;&nbsp;&nbsp;&nbsp;sharedThings<span class="op">:</span> <a class="word scode" href="#specs_Shared">Shared</a><span class="op">({</span><br />
+                                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;s1<span class="op">:</span> <span class="str">&#39;*S1*&#39;</span><span class="comma">,</span><br />
+                                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;s2<span class="op">:</span> <a class="scode keyword" href="core_function.htm">function</a><span class="op">(</span><span class="op">) {</span> <span class="keyword">return</span> <span class="str">&#39;*S2*&#39;</span> <span class="op">}</span><br />
+                                            &nbsp;&nbsp;&nbsp;&nbsp;<span class="op">})</span><br />
+                                        <span class="op">})</span><span class="scol">;</span>
+                                    </div>
+                                </li>
+                                <li class="bli">individually (for <a href="core_function.htm">functions</a>, <a href="#intro">classes</a>, <a href="core_type.htm">types</a>, and other function-based objects.)
+                                    <div class="code">
+                                        <span class="keyword">var</span> foo <span class="op">=</span> <a class="scode word" href="#intro">Class</a><span class="op">(</span><span class="str">&#39;foo&#39;</span><span class="comma">,</span> <span class="op">{</span><br />
+                                            &nbsp;&nbsp;&nbsp;&nbsp;s1<span class="op">:</span> <a class="scode keyword" href="core_function.htm">function</a><span class="op">(</span><span class="op">) {</span> <span class="keyword">return</span> <span class="str">&#39;*S1*&#39;</span> <span class="op">}.</span><a class="word scode" href="core_function.htm#members_Shared">Shared</a><span class="op">()</span><span class="comma">,</span><br />
+                                            &nbsp;&nbsp;&nbsp;&nbsp;s2<span class="op">:</span> <a class="scode keyword" href="core_function.htm">function</a><span class="op">(</span><span class="op">) {</span> <span class="keyword">return</span> <span class="str">&#39;*S2*&#39;</span> <span class="op">}.</span><a class="word scode" href="core_function.htm#members_Shared">Shared</a><span class="op">()</span><br />
+                                        <span class="op">})</span><span class="scol">;</span>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+                <li class="bli"><span class="title" id="specs_PrivShare">PrivShare :</span> A quick way to set members as private <b>and</b> shared. These are only accessable by shared functions of the same class.<a class="TOP" href="#TOP">&nbsp;&nbsp;</a>
+                    <div class="code">
+                        <span class="word">PrivShare</span><span class="colon">:</span> <span class="vari">privateSharedObj</span><span class="comma">,</span> 
+                        <hr />
+                        _anything_here_<span class="colon">:</span> <span class="word">PrivShare</span><span class="op">(</span><span class="vari">privateSharedObj</span><span class="op">)</span><span class="comma">,</span> 
+                        <hr />
+                        _var_name_<span class="colon">:</span> <a class="scode keyword" href="core_function.htm">function</a><span class="op">(</span><span class="op">) {</span> <span class="commentLine">/* some code */</span> <span class="op">}.</span><a class="word scode" href="core_function.htm#members_PrivShare">PrivShare</a><span class="op">()</span><span class="comma">,</span> 
+                        <div class="comments">
+                            <ul class="UL">
+                                <li><span class="title">privateSharedObj :</span> All members of this object will be added to the class as private-shared members. In the following examples, <i>s1</i> and <i>s2</i> will be added to the new class.
+                                    <div class="code">
+                                        <span class="keyword">var</span> foo <span class="op">=</span> <a class="scode word" href="#intro">Class</a><span class="op">(</span><span class="str">&#39;foo&#39;</span><span class="comma">,</span> <span class="op">{</span><br />
+                                            &nbsp;&nbsp;&nbsp;&nbsp;<a class="word scode" href="#specs_PrivShare">PrivShare</a><span class="op">: {</span><br />
+                                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;s1<span class="op">:</span> <span class="str">&#39;*S1*&#39;</span><span class="comma">,</span><br />
+                                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;s2<span class="op">:</span> <a class="scode keyword" href="core_function.htm">function</a><span class="op">(</span><span class="op">) {</span> <span class="keyword">return</span> <span class="str">&#39;*S2*&#39;</span> <span class="op">}</span><br />
+                                            &nbsp;&nbsp;&nbsp;&nbsp;<span class="op">}</span><br />
+                                        <span class="op">})</span><span class="scol">;</span>
+                                    </div>
+                                    <hr />
+                                    <div class="code">
+                                        <span class="keyword">var</span> foo <span class="op">=</span> <a class="scode word" href="#intro">Class</a><span class="op">(</span><span class="str">&#39;foo&#39;</span><span class="comma">,</span> <span class="op">{</span><br />
+                                            &nbsp;&nbsp;&nbsp;&nbsp;privateSharedThings<span class="op">:</span> <a class="word scode" href="#specs_PrivShare">PrivShare</a><span class="op">({</span><br />
+                                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;s1<span class="op">:</span> <span class="str">&#39;*S1*&#39;</span><span class="comma">,</span><br />
+                                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;s2<span class="op">:</span> <a class="scode keyword" href="core_function.htm">function</a><span class="op">(</span><span class="op">) {</span> <span class="keyword">return</span> <span class="str">&#39;*S2*&#39;</span> <span class="op">}</span><br />
+                                            &nbsp;&nbsp;&nbsp;&nbsp;<span class="op">})</span><br />
+                                        <span class="op">})</span><span class="scol">;</span>
+                                    </div>
+                                </li>
+                                <li class="bli">individually (for <a href="core_function.htm">functions</a>, <a href="#intro">classes</a>, <a href="core_type.htm">types</a>, and other function-based objects.)
+                                    <div class="code">
+                                        <span class="keyword">var</span> foo <span class="op">=</span> <a class="scode word" href="#intro">Class</a><span class="op">(</span><span class="str">&#39;foo&#39;</span><span class="comma">,</span> <span class="op">{</span><br />
+                                            &nbsp;&nbsp;&nbsp;&nbsp;s1<span class="op">:</span> <a class="scode keyword" href="core_function.htm">function</a><span class="op">(</span><span class="op">) {</span> <span class="keyword">return</span> <span class="str">&#39;*S1*&#39;</span> <span class="op">}.</span><a class="word scode" href="core_function.htm#members_PrivShare">PrivShare</a><span class="op">()</span><span class="comma">,</span><br />
+                                            &nbsp;&nbsp;&nbsp;&nbsp;s2<span class="op">:</span> <a class="scode keyword" href="core_function.htm">function</a><span class="op">(</span><span class="op">) {</span> <span class="keyword">return</span> <span class="str">&#39;*S2*&#39;</span> <span class="op">}.</span><a class="word scode" href="core_function.htm#members_PrivShare">PrivShare</a><span class="op">()</span><br />
+                                        <span class="op">})</span><span class="scol">;</span>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
                 <li class="bli"><span class="title" id="specs_Init">Init :</span> This is the function that is called during the initialization of a new instance of your class.<a class="TOP" href="#TOP">&nbsp;&nbsp;</a>
                     <div class="code">
                         <span class="word">Init</span><span class="colon">:</span> <span class="vari">initFn</span><span class="comma">,</span> 
@@ -363,12 +322,12 @@ ul.UL > li .title{
         <span class="topic" id="examples">Examples</span><a class="TOP" href="#TOP">&nbsp;&nbsp;</a><hr />
             <span class="subTopic" id="examples_Class">Class</span><a class="TOP" href="#TOP">&nbsp;&nbsp;</a><br />
                 <div class="code">
-                    <span class="keyword">require</span><span class="op">(</span><span class="str">&#39;pops/pops.loader&#39;</span><span class="op">)</span><span class="comma">.</span><a class="scode" href="loader.htm#func_Load">Load</a><span class="op">()</span><span class="scol">;</span><br />
+                    <span class="keyword">require</span><span class="op">(</span><span class="str">&#39;pops/pops.core&#39;</span><span class="op">)</span><span class="comma">.</span><a class="scode" href="core_Global.htm">Global</a><span class="op">.</span><a class="scode" href="core_Global.htm#shared_Pops">Pops</a><span class="op">()</span><span class="scol">;</span><br />
                     <br />
 <!! class1 !!>
                     <span class="keyword">var</span> class1 <span class="op">=</span> <span class="keyword">new</span> <a class="scode" href="#main">Class</a><span class="op">({</span><br />
                         &nbsp;&nbsp;&nbsp;&nbsp;<a class="scode" href="#specs_options">options</a><span class="colon">:</span> <span class="op">{</span> val<span class="colon">:</span> <span class="str">&#39;HeLlO wOrLd&#39;</span> <span class="op">}</span><span class="comma">,</span><br />
-                        &nbsp;&nbsp;&nbsp;&nbsp;<a class="scode" href="#specs_Init">Init</a><span class="colon">:</span> <span class="keyword"><a href="function.htm">function</a></span><span class="op">(</span>ops<span class="op">)</span> <span class="op">{</span><br />
+                        &nbsp;&nbsp;&nbsp;&nbsp;<a class="scode" href="#specs_Init">Init</a><span class="colon">:</span> <span class="keyword"><a href="core_function.htm">function</a></span><span class="op">(</span>ops<span class="op">)</span> <span class="op">{</span><br />
                             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">this</span><span class="comma">.</span><a class="scode" href="core_ClassInstance.htm#func_SetOptions">SetOptions</a><span class="op">(</span>ops<span class="op">)</span><span class="scol">;</span> <span class="commentLine">// SetOptions is usualy the first statement in the Init function.</span><br />
                             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">var</span> o <span class="op">=</span> <span class="keyword">this</span><span class="comma">.</span>options<span class="scol">;</span> <span class="commentLine">// you can also use this.op, instead of this.options.</span><br />
                             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">var</span> v <span class="op">=</span> o<span class="comma">.</span>val<span class="scol">;</span><br />
@@ -377,7 +336,7 @@ ul.UL > li .title{
                         &nbsp;&nbsp;&nbsp;&nbsp;<span class="op">}</span><span class="comma">,</span><br />
 
 <!! class1 | DoStuff() !!>
-                        &nbsp;&nbsp;&nbsp;&nbsp;DoStuff<span class="colon">:</span> <span class="keyword"><a href="function.htm">function</a></span><span class="op">(</span><span class="op">)</span> <span class="op">{</span> <span class="keyword">return</span> <span class="keyword">this</span><span class="comma">.</span>value<span class="scol">;</span> <span class="op">}</span><span class="comma">,</span><br />
+                        &nbsp;&nbsp;&nbsp;&nbsp;DoStuff<span class="colon">:</span> <span class="keyword"><a href="core_function.htm">function</a></span><span class="op">(</span><span class="op">)</span> <span class="op">{</span> <span class="keyword">return</span> <span class="keyword">this</span><span class="comma">.</span>value<span class="scol">;</span> <span class="op">}</span><span class="comma">,</span><br />
 
                     <span class="op">}</span><span class="op">)</span><span class="scol">;</span><br />
                     <br />
@@ -391,12 +350,12 @@ ul.UL > li .title{
 
             <span class="subTopic" id="inheritance">Class Inheritance</span><a class="TOP" href="#TOP">&nbsp;&nbsp;</a><br />
                 <div class="code">
-                    <span class="keyword">require</span><span class="op">(</span><span class="str">&#39;pops/pops.loader&#39;</span><span class="op">)</span><span class="comma">.</span><a class="scode" href="loader.htm#func_Load">Load</a><span class="op">()</span><span class="scol">;</span><br />
+                    <span class="keyword">require</span><span class="op">(</span><span class="str">&#39;pops/pops.core&#39;</span><span class="op">)</span><span class="comma">.</span><a class="scode" href="core_Global.htm">Global</a><span class="op">.</span><a class="scode" href="core_Global.htm#shared_Pops">Pops</a><span class="op">()</span><span class="scol">;</span><br />
                     <br />
 <!! class1 !!>
                     <span class="keyword">var</span> class1 <span class="op">=</span> <span class="keyword">new</span> <a class="scode" href="#main">Class</a><span class="op">({</span><br />
                         &nbsp;&nbsp;&nbsp;&nbsp;<a class="scode" href="#specs_options">options</a><span class="colon">:</span> <span class="op">{</span> val<span class="colon">:</span> <span class="str">&#39;HeLlO wOrLd&#39;</span> <span class="op">}</span><span class="comma">,</span><br />
-                        &nbsp;&nbsp;&nbsp;&nbsp;<a class="scode" href="#specs_Init">Init</a><span class="colon">:</span> <span class="keyword"><a href="function.htm">function</a></span><span class="op">(</span>ops<span class="op">)</span> <span class="op">{</span><br />
+                        &nbsp;&nbsp;&nbsp;&nbsp;<a class="scode" href="#specs_Init">Init</a><span class="colon">:</span> <span class="keyword"><a href="core_function.htm">function</a></span><span class="op">(</span>ops<span class="op">)</span> <span class="op">{</span><br />
                             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">this</span><span class="comma">.</span><a class="scode" href="core_ClassInstance.htm#func_SetOptions">SetOptions</a><span class="op">(</span>ops<span class="op">)</span><span class="scol">;</span><br />
                             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">var</span> o <span class="op">=</span> <span class="keyword">this</span><span class="comma">.</span>options<span class="scol">;</span><br />
                             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">var</span> v <span class="op">=</span> o<span class="comma">.</span>val<span class="scol">;</span><br />
@@ -405,16 +364,16 @@ ul.UL > li .title{
                         &nbsp;&nbsp;&nbsp;&nbsp;<span class="op">}</span><span class="comma">,</span><br />
 
 <!! class1 | DoStuff() !!>
-                        &nbsp;&nbsp;&nbsp;&nbsp;DoStuff<span class="colon">:</span> <span class="keyword"><a href="function.htm">function</a></span><span class="op">(</span><span class="op">)</span> <span class="op">{</span> <span class="keyword">return</span> <span class="keyword">this</span><span class="comma">.</span>value<span class="scol">;</span> <span class="op">}</span><span class="comma">,</span><br />
+                        &nbsp;&nbsp;&nbsp;&nbsp;DoStuff<span class="colon">:</span> <span class="keyword"><a href="core_function.htm">function</a></span><span class="op">(</span><span class="op">)</span> <span class="op">{</span> <span class="keyword">return</span> <span class="keyword">this</span><span class="comma">.</span>value<span class="scol">;</span> <span class="op">}</span><span class="comma">,</span><br />
 
                     <span class="op">}</span><span class="op">)</span><span class="scol">;</span><br />
                     <br />
 <!! class2 !!>
                     <span class="keyword">var</span> class2 <span class="op">=</span> <span class="keyword">new</span> <a class="scode" href="#main">Class</a><span class="op">({</span><br />
                         &nbsp;&nbsp;&nbsp;&nbsp;<a class="scode" href="#specs_Extends">Extends</a><span class="colon">:</span> class1<span class="comma">,</span><br />
-                        &nbsp;&nbsp;&nbsp;&nbsp;<a class="scode" href="#specs_Init">Init</a><span class="colon">:</span> <span class="keyword"><a href="function.htm">function</a></span><span class="op">(</span>ops<span class="op">)</span> <span class="op">{</span> <a class="scode" href="core_ClassInstance.htm#func_Parent">Parent</a><span class="op">(</span>ops<span class="op">)</span><span class="scol">;</span> <span class="op">}</span><span class="comma">,</span><br />
+                        &nbsp;&nbsp;&nbsp;&nbsp;<a class="scode" href="#specs_Init">Init</a><span class="colon">:</span> <span class="keyword"><a href="core_function.htm">function</a></span><span class="op">(</span>ops<span class="op">)</span> <span class="op">{</span> <a class="scode" href="core_ClassInstance.htm#func_Parent">Parent</a><span class="op">(</span>ops<span class="op">)</span><span class="scol">;</span> <span class="op">}</span><span class="comma">,</span><br />
 <!! class2 | DoStuff() !!>
-                        &nbsp;&nbsp;&nbsp;&nbsp;DoStuff<span class="colon">:</span> <span class="keyword"><a href="function.htm">function</a></span><span class="op">(</span><span class="op">)</span> <span class="op">{</span><br />
+                        &nbsp;&nbsp;&nbsp;&nbsp;DoStuff<span class="colon">:</span> <span class="keyword"><a href="core_function.htm">function</a></span><span class="op">(</span><span class="op">)</span> <span class="op">{</span><br />
                             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">return</span> <span class="str">&#39;The value is: ( &#39;</span> <span class="op">+</span> <a class="scode" href="core_ClassInstance.htm#func_Parent">Parent</a><span class="op">()</span> <span class="op">+</span> <span class="str">&#39; )&#39;</span><span class="scol">;</span><br />
                         &nbsp;&nbsp;&nbsp;&nbsp;<span class="op">}</span><span class="comma">,</span><br />
 

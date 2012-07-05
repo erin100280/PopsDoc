@@ -11,7 +11,7 @@
             <span> : </span> 
             <a href="core.htm">core</a>
             <span> : </span> 
-            <a href="core_Choose.htm">Choose</a>
+            <a href="core_Overload.htm">Overload</a>
         </p>
         <p class="slogan">A Framework For Node.JS</p>
         <a class="help" href="help.htm">help</a>
@@ -20,19 +20,18 @@
         <hr class="HR" />
     </div>
     <div id="main">
-        <span class="subTopic" id="intro">core.Choose</span>&nbsp;&nbsp;&nbsp;&nbsp;(function)<a class="TOP" href="#TOP">&nbsp;&nbsp;</a><br />
-            &nbsp;&nbsp;&nbsp;&nbsp;The &#39;Choose&#39; function returns a result from &#39;choices&#39; based on the &#39;choice&#39; argument. The &#39;choices&#39; argument is an object, where the members are the choices. When 'choice' matches the name of one of the members of 'choices', it will return that members' value.<br />
+        <span class="subTopic" id="intro">core.Overload</span>&nbsp;&nbsp;&nbsp;&nbsp;(function)<a class="TOP" href="#TOP">&nbsp;&nbsp;</a><br />
+            &nbsp;&nbsp;&nbsp;&nbsp;Overload creates one function that will call one of any number of functions based on the argument signiture..<br />
         <br />
         <span class="subTopic" id="general_file">File</span><a class="TOP" href="#TOP">&nbsp;&nbsp;</a><br />
             &nbsp;&nbsp;&nbsp;&nbsp;pops/pops.core.js<br />
         <br />
         <span class="subTopic" id="syntax">Syntax</span><a class="TOP" href="#TOP">&nbsp;&nbsp;</a><br />
             <div class="code">
-                <span class="keyword">var</span> foo <span class="op">=</span> <span class="word">Choose</span><span class="op">(</span><span class="vari">choice</span><span class="comma">,</span> <span class="vari">choices</span><span class="op">)</span><span class="scol">;</span>
+                <span class="keyword">var</span> foo <span class="op">=</span> <span class="word">Overload</span><span class="op">(</span><span class="vari">funcs</span></span><span class="op">)</span><span class="scol">;</span>
                 <div class="comments">
                     <ul class="UL">
-                        <li><span class="title">choice :</span> A string value representing your choice.</span></span></li>
-                        <li><span class="title"><a href="#choices">choices</a> :</span> An object containing the choice values. Each member is a choice, it's name is the choice's name. You can use multiple choice names for a single choice using the 'or' operator (_?_).</li>
+                        <li><span class="title">funcs:</span> An object containing the functions to be called. The name will be used as the argument signiture that it should be called for.</li>
                     </ul>
                 </div>
             </div>
@@ -43,29 +42,32 @@
                 <ul class="UL">
                     <li><span class="title"><a href="#main">General</a></span>
                         <ul class="UL">
-                            <li><span class="title"><a href="#intro">core.Choose</a></span></li>
+                            <li><span class="title"><a href="#intro">core.Overload</a></span></li>
                             <li><span class="title"><a href="#general_file">File</a></span></li>
                             <li><span class="title"><a href="#syntax">Syntax</a></span></li>
                             <li><span class="title"><a href="#contents">Contents</a></span></li>
                         </ul>
                     </li>
-                    <li><span class="title"><a href="#choices">Choices</a></span>
+                    <li><span class="title"><a href="#options">Options</a></span>
                         <ul class="UL">
-                            <li><span class="title"><a href="#choices_else"><span class="dollar">$</span>else</a></span></li>
-                            <li><span class="title"><a href="#choices_run"><span class="dollar">$</span>run</a></span></li>
+                            <li><span class="title"><a href="#options_else"><span class="dollar">$</span>else</a></span></li>
                         </ul>
                     </li>
-                    <li><span class="title"><a href="#namingSyntax">Naming syntax</a></span>
+                    <li><span class="title"><a href="#argSyntax">Argument Syntax</a></span>
                         <ul class="UL">
-                            <li><span class="title"><a href="#namingSyntax_or">_or_</a></span></li>
+                            <li><span class="title"><a href="#argSyntax_Operators">Operators</a></span>
+                                <ul class="UL">
+                                    <li><span class="title"><a href="#argSyntax_Operators_sep"><span class="dollar">$</span></a>&nbsp;&nbsp;<a href="#argSyntax_Operators_sep">[sub-type]</a></span></li>
+                                    <li><span class="title"><a href="#argSyntax_Operators_sub">_</a>&nbsp;&nbsp;<a href="#argSyntax_Operators_sep">[seperator]</a></span></li>
+                                    <li><span class="title"><a href="#argSyntax_Operators_or">_or_</a>&nbsp;&nbsp;<a href="#argSyntax_Operators_or">[or]</a></span></li>
+                                </ul>
+                            </li>
                         </ul>
                     </li>
                     <li><span class="title"><a href="#examples">Examples</a></span>
                         <ul class="UL">
-                            <li><span class="title"><a href="#examples_Choose">Choose</a></span></li>
-                            <li><span class="title"><a href="#examples_else"><span class="dollar">$</span>else</a></span></li>
-                            <li><span class="title"><a href="#examples_run"><span class="dollar">$</span>run</a></span></li>
-                            <li><span class="title"><a href="#examples_or">_or_</a></span></li>
+                            <li><span class="title"><a href="#examples_Class">Class</a></span></li>
+                            <li><span class="title"><a href="#inheritance">Class Inheritance</a></span></li>
                         </ul>
                     </li>
                     <li><span class="title"><a href="#SeeAlso">See Also</a></span>
@@ -77,35 +79,30 @@
                 </ul>
             </div>
 
-        <span class="topic" id="choices">Choices</span><a class="TOP" href="#TOP">&nbsp;&nbsp;</a><hr />
+        <span class="topic" id="options">Options</span><a class="TOP" href="#TOP">&nbsp;&nbsp;</a><hr />
             <ul class="UL">
-                <li><span class="title" id="choices_else"><span class="dollar">$</span>else:</span> The value of this member will be returned if no choices can be matched.<a class="TOP" href="#TOP">&nbsp;&nbsp;</a><br />
+                <li><span id="options_else"class="title"><span class="dollar">$</span>else:</span> This function will be ran if no signitures can be matched.<a class="TOP" href="#TOP">&nbsp;&nbsp;</a><br />
                     <div class="code">
-                        <span class="word"><span class="dollar">$</span>else</span><span class="colon">:</span> <span class="vari">val</span><span class="comma">,</span>
+                        <span class="word"><span class="dollar">$</span>else</span><span class="colon">:</span> <span class="vari">fn</span><span class="comma">,</span>
                         <div class="comments">
                             <ul class="UL">
-                                <li><span class="title">val : </span>Any value.</li>
+                                <li><span class="title">fn : </span>Any function.</li>
                             </ul>
                         </div>
                     </div>
                 </li>
-                <li><span class="title" id="choices_run"><span class="dollar">$</span>run:</span> If set to true, and the resulting value is a function, Choose will run the function and return the result rather than returning the function itself.<a class="TOP" href="#TOP">&nbsp;&nbsp;</a><br />
-                    <div class="code">
-                        <span class="word"><span class="dollar">$</span>run</span><span class="colon">:</span> <span class="keyword">true</span><span class="comma">,</span>
-                        <br />
-                    </div>
-                </li>
             </ul>
 
-        <span class="topic" id="namingSyntax">Naming syntax</span><a class="TOP" href="#TOP">&nbsp;&nbsp;</a><hr />
+        <span class="topic" id="argSyntax">Argument Syntax</span><a class="TOP" href="#TOP">&nbsp;&nbsp;</a><hr />
             &nbsp;&nbsp;&nbsp;&nbsp;Naming a choice is like naming a variable, the same rules apply.<br />
             <br />
-            <table class="table" style="width:300px;">
+            <table class="table argSyntax">
                 <tr>
                     <td class="header">Name</td>
                     <td class="header">&nbsp;&nbsp;&nbsp;&nbsp;Result&nbsp;&nbsp;&nbsp;&nbsp;</td>
                 </tr>
-                <tr><td class="name">myChoice</td><td class="result good">good</td></tr>
+                <tr><td class="name">s_n</td><td class="result match">matches: (string, number)</td></tr>
+                <tr><td class="name">s_n</td><td class="result good">good</td></tr>
                 <tr><td class="name">my Choice</td><td class="result error">error</td></tr>
                 <tr><td class="name">myChoice2</td><td class="result good">good</td></tr>
                 <tr><td class="name">2myChoice</td><td class="result error">error</td></tr>
@@ -115,18 +112,147 @@
                 <tr><td class="name">?myChoice</td><td class="result error">error</td></tr>
             </table>
             <br />
-            <span class="subTopic" id="namingSyntax_or">_or_</span><a class="TOP" href="#TOP">&nbsp;&nbsp;</a><br />
-                &nbsp;&nbsp;&nbsp;&nbsp;Use &nbsp;_or_&nbsp; to set a single value to multiple choices.
-                <div class="code">
-                    Choice1<span class="word">_or_</span>Choice2<span class="word">_or_</span>MyChoice<span class="colon">:</span> <span class="vari">val</span><span class="comma">,</span>
-                    <div class="comments">
-                        <ul class="UL">
-                            <li><span class="title">Choice1, Choice2, MyChoice : </span>These are choice names.</li>
-                            <li><span class="title">val : </span>Any value.</li>
-                        </ul>
+            <span class="subTopic" id="argSyntax_Types">Argument Types</span><a class="TOP" href="#TOP">&nbsp;&nbsp;</a><br />
+            <ul class="UL">
+                <li id="argSyntax_Types_a"><span class="title">a</span>&nbsp;&nbsp;[array]<a class="TOP" href="#TOP">&nbsp;&nbsp;</a><br />
+                    &nbsp;&nbsp;&nbsp;&nbsp;Specifies an <a class="scode" href="core_array.htm">array</a>. <a href="#argSyntax_Operators_sub">Sub-type</a> is a number to match with <a class="scode" href="core_array.htm">array</a> length.
+                    <div class="code">
+                        <span class="word">a</span><span class="colon">:</span> <span class="vari">fn</span><span class="comma">,</span>
+                        <hr />
+                        <span class="word">a</span><span class="dollar">$</span><span class="vari">num</span><span class="colon">:</span> <span class="vari">fn</span><span class="comma">,</span>
+                        <div class="comments">
+                            <ul class="UL">
+                                <li><span class="title">fn : </span>Function to be called.</li>
+                                <li><span class="title">num: </span>If the <a class="scode" href="core_array.htm">array</a>'s length does not match this number, the signiture will not match.</li>
+                            </ul>
+                        </div>
                     </div>
-                </div>
-            <br />
+                </li>
+                <li id="Li2"><span class="title">c</span>&nbsp;&nbsp;[class instance]<a class="TOP" href="#TOP">&nbsp;&nbsp;</a><br />
+                    &nbsp;&nbsp;&nbsp;&nbsp;Specifies a <a href="core_ClassInst.htm">class instance</a><b>.</b> <a href="#argSyntax_Operators_sub">Sub-type</a> is a <a href="core_ValReg.htm">value-registry</a> key to a <a class="scode" href="core_Class.htm">Class</a> to match with the type of <a href="core_ClassInst.htm">class instance</a> being passed.
+                    <div class="code">
+                        <span class="word">c</span><span class="colon">:</span> <span class="vari">fn</span><span class="comma">,</span>
+                        <hr />
+                        <span class="word">c</span><span class="dollar">$</span><span class="vari">key</span><span class="colon">:</span> <span class="vari">fn</span><span class="comma">,</span>
+                        <div class="comments">
+                            <ul class="UL">
+                                <li><span class="title">fn : </span>Function to be called.</li>
+                                <li><span class="title">key: </span>Overload will grab the value that is paired with this string from the <a href="core_ValReg.htm">value-registry</a><b>.</b> If the value is <i>undefined</i> or not a <a class="scode" href="core_Class.htm">Class</a>, the signiture will not match<b>.</b>If the value is not the same <a class="scode" href="core_Class.htm">Class</a> type as the <a href="core_ClassInst.htm">class instance</a> being passed, or the <a href="core_ClassInst.htm">class instance</a> type is not an extension of the value-<a href="core_Class.htm">Class</a>: the signiture will not match<b>.</b></li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+                <li id="argSyntax_Types_C"><span class="title">C</span>&nbsp;&nbsp;[class]<a class="TOP" href="#TOP">&nbsp;&nbsp;</a><br />
+                    &nbsp;&nbsp;&nbsp;&nbsp;Specifies a <a class="scode" href="core_Class.htm">Class</a><b>.</b> <a href="#argSyntax_Operators_sub">Sub-type</a> is a <a href="core_ValReg.htm">value-registry</a> key to a <a class="scode" href="core_Class.htm">Class</a> to match with the <a class="scode" href="core_Class.htm">Class</a> being passed.
+                    <div class="code">
+                        <span class="word">c</span><span class="colon">:</span> <span class="vari">fn</span><span class="comma">,</span>
+                        <hr />
+                        <span class="word">c</span><span class="dollar">$</span><span class="vari">key</span><span class="colon">:</span> <span class="vari">fn</span><span class="comma">,</span>
+                        <div class="comments">
+                            <ul class="UL">
+                                <li><span class="title">fn : </span>Function to be called.</li>
+                                <li><span class="title">key: </span>Overload will grab the value that is paired with this string from the <a href="core_ValReg.htm">value-registry</a><b>.</b> If the value is <i>undefined</i> or not a <a class="scode" href="core_Class.htm">Class</a>, the signiture will not match<b>.</b>If the value is not the same <a class="scode" href="core_Class.htm">Class</a> as the <a class="scode" href="core_Class.htm">Class</a> being passed, the signiture will not match<b>.</b></li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+                <li id="argSyntax_Types_f"><span class="title">f</span>&nbsp;&nbsp;[function]<a class="TOP" href="#TOP">&nbsp;&nbsp;</a><br />
+                    &nbsp;&nbsp;&nbsp;&nbsp;Specifies a <a class="scode" href="core_function.htm">function</a><b>.</b> <a href="#argSyntax_Operators_sub">Sub-type</a> is a <a href="core_ValReg.htm">value-registry</a> key to a <a class="scode" href="core_function.htm">function</a> to match with the <a class="scode" href="core_function.htm">function</a> being passed.
+                    <div class="code">
+                        <span class="word">f</span><span class="colon">:</span> <span class="vari">fn</span><span class="comma">,</span>
+                        <hr />
+                        <span class="word">f</span><span class="dollar">$</span><span class="vari">key</span><span class="colon">:</span> <span class="vari">fn</span><span class="comma">,</span>
+                        <div class="comments">
+                            <ul class="UL">
+                                <li><span class="title">fn : </span>Function to be called.</li>
+                                <li><span class="title">key: </span>Overload will grab the value that is paired with this string from the <a href="core_ValReg.htm">value-registry</a><b>.</b> If the value is <i>undefined</i> or not a <a class="scode" href="core_function.htm">function</a>, the signiture will not match<b>.</b>If the value is not the same <a class="scode" href="core_function.htm">function</a>, the signiture will not match<b>.</b></li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+                <li id="Li1"><span class="title">s</span>&nbsp;&nbsp;[string]<a class="TOP" href="#TOP">&nbsp;&nbsp;</a><br />
+                    &nbsp;&nbsp;&nbsp;&nbsp;Specifies a <a class="scode" href="core_string.htm">string</a><b>.</b> <a href="#argSyntax_Operators_sub">Sub-type</a> is a <a class="scode" href="core_string.htm">string</a> to match with the <a class="scode" href="core_string.htm">string</a> being passed [not case-sensative].
+                    <div class="code">
+                        <span class="word">s</span><span class="colon">:</span> <span class="vari">fn</span><span class="comma">,</span>
+                        <hr />
+                        <span class="word">s</span><span class="dollar">$</span><span class="vari">str</span><span class="colon">:</span> <span class="vari">fn</span><span class="comma">,</span>
+                        <div class="comments">
+                            <ul class="UL">
+                                <li><span class="title">fn : </span>Function to be called.</li>
+                                <li><span class="title">str: </span>If this <a class="scode" href="core_string.htm">string</a> does not match[ignoring case] the <a class="scode" href="core_string.htm">string</a> being passed, the signiture will not match.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+                <li id="argSyntax_Types_S"><span class="title">S</span>&nbsp;&nbsp;[string: case-sensative]<a class="TOP" href="#TOP">&nbsp;&nbsp;</a><br />
+                    &nbsp;&nbsp;&nbsp;&nbsp;Specifies a <a class="scode" href="core_string.htm">string</a><b>.</b> <a href="#argSyntax_Operators_sub">Sub-type</a> is a <a class="scode" href="core_string.htm">string</a> to match with the <a class="scode" href="core_string.htm">string</a> being passed [case-sensative].
+                    <div class="code">
+                        <span class="word">S</span><span class="colon">:</span> <span class="vari">fn</span><span class="comma">,</span>
+                        <hr />
+                        <span class="word">S</span><span class="dollar">$</span><span class="vari">str</span><span class="colon">:</span> <span class="vari">fn</span><span class="comma">,</span>
+                        <div class="comments">
+                            <ul class="UL">
+                                <li><span class="title">fn : </span>Function to be called.</li>
+                                <li><span class="title">str: </span>If this <a class="scode" href="core_string.htm">string</a> does not match[including case] the <a class="scode" href="core_string.htm">string</a> being passed, the signiture will not match.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+                <li id="argSyntax_Types_o"><span class="title">o</span>&nbsp;&nbsp;[object]<a class="TOP" href="#TOP">&nbsp;&nbsp;</a><br />
+                    &nbsp;&nbsp;&nbsp;&nbsp;Specifies an <a class="scode" href="core_object.htm">object</a><b>.</b>.
+                    <div class="code">
+                        <span class="word">o</span><span class="colon">:</span> <span class="vari">fn</span><span class="comma">,</span>
+                        <div class="comments">
+                            <ul class="UL">
+                                <li><span class="title">fn : </span>Function to be called.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+            <br />            
+            <span class="subTopic" id="argSyntax_Operators">Operators</span><a class="TOP" href="#TOP">&nbsp;&nbsp;</a><br />
+            <ul class="UL">
+                <li id="argSyntax_Operators_sep"><span class="title">_ [argument seperator]</span><a class="TOP" href="#TOP">&nbsp;&nbsp;</a><br />
+                    &nbsp;&nbsp;&nbsp;&nbsp;Use &nbsp;_&nbsp; to seperate arguments in the signiture string.
+                    <div class="code">
+                        arg1<span class="word">_</span>arg2<span class="colon">:</span> <span class="vari">val</span><span class="comma">,</span>
+                        <div class="comments">
+                            <ul class="UL">
+                                <li><span class="title">arg1, arg2: </span>These are argument strings.</li>
+                                <li><span class="title">val : </span>Function to be called.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+                <li id="argSyntax_Operators_sub"><span class="title"><span class="dollar">$</span> [sub-type]</span><a class="TOP" href="#TOP">&nbsp;&nbsp;</a><br />
+                    &nbsp;&nbsp;&nbsp;&nbsp;Used to provide more information about an accepted argument-type in the signiture string. Use to specify string values, class names, type names, structure names, and number values.
+                    <div class="code">
+                        arg1_arg2<span class="word"><span class="dollar">$</span></span>moreDat<span class="colon">:</span> <span class="vari">val</span><span class="comma">,</span>
+                        <div class="comments">
+                            <ul class="UL">
+                                <li><span class="title">arg1, arg2: </span>These are argument strings.</li>
+                                <li><span class="title">moreDat: </span>Sub-type string.</li>
+                                <li><span class="title">val : </span>Function to be called.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+                <li id="argSyntax_Operators_or"><span class="title">_or_</span><a class="TOP" href="#TOP">&nbsp;&nbsp;</a><br />
+                    &nbsp;&nbsp;&nbsp;&nbsp;Use &nbsp;_or_&nbsp; to make one function handle multiple signitures.
+                    <div class="code">
+                        Sig1<span class="word">_or_</span>Sig2<span class="colon">:</span> <span class="vari">val</span><span class="comma">,</span>
+                        <div class="comments">
+                            <ul class="UL">
+                                <li><span class="title">Sig1, Sig2: </span>These are argument signiture strings.</li>
+                                <li><span class="title">val : </span>Function to be called.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+            
+            </ul>
+            
 
 
 

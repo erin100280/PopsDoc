@@ -1,0 +1,409 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head>
+    <title></title>
+    <link rel="stylesheet" href="PopsDoc.css" type="text//css" media="all" charset="utf-8" />
+    <style type="text/css">
+        .style1 {
+            height: auto;
+            width: 231px;
+        }
+        .style2 {
+            height: auto;
+            width: 197px;
+        }
+    </style>
+</head>
+<body id="TOP">
+    <div id="header" class="header">
+        <p class="titleLinks">
+            <a href="Contents.htm">Pops.js Documentatin</a>
+            <span> : </span> 
+            <a href="core.htm">core</a>
+            <span> : </span> 
+            <a href="core_Overload.htm">Overload</a>
+        </p>
+        <p class="slogan">A Framework For Node.JS</p>
+        <a class="help" href="help.htm">help</a>
+        <div class="website"><p><a href="https://sites.google.com/site/popsnode/">Pops Website</a></p></div>
+        <div class="copyright"><p>(c) 2012 Erin Bradford</p></div>
+        <hr class="HR" />
+    </div>
+    <div id="main">
+        <span class="subTopic" id="intro">core.Overload</span>&nbsp;&nbsp;&nbsp;&nbsp;(function)<a class="TOP" href="#TOP">&nbsp;&nbsp;</a><br />
+            &nbsp;&nbsp;&nbsp;&nbsp;Overload creates one function that will call one of any number of functions based on the argument signiture..<br />
+        <br />
+        <span class="subTopic" id="general_file">File</span><a class="TOP" href="#TOP">&nbsp;&nbsp;</a><br />
+            &nbsp;&nbsp;&nbsp;&nbsp;pops/pops.core.js<br />
+        <br />
+        <span class="subTopic" id="syntax">Syntax</span><a class="TOP" href="#TOP">&nbsp;&nbsp;</a><br />
+            <div class="code">
+                <span class="keyword">var</span> foo <span class="op">=</span> <span class="word">Overload</span><span class="op">(</span><span class="vari">funcs</span></span><span class="op">)</span><span class="scol">;</span>
+                <div class="comments">
+                    <ul class="UL">
+                        <li><span class="title">funcs:</span> An object containing the functions to be called. The name will be used as the argument signiture that it should be called for.</li>
+                    </ul>
+                </div>
+            </div>
+        <br />
+
+        <span class="subTopic" id="contents">Contents</span><a class="TOP" href="#TOP">&nbsp;&nbsp;</a><br />
+            <div class="contents">
+                <ul class="UL">
+                    <li><span class="title"><a href="#main">General</a></span>
+                        <ul class="UL">
+                            <li><span class="title"><a href="#intro">core.Overload</a></span></li>
+                            <li><span class="title"><a href="#general_file">File</a></span></li>
+                            <li><span class="title"><a href="#syntax">Syntax</a></span></li>
+                            <li><span class="title"><a href="#contents">Contents</a></span></li>
+                        </ul>
+                    </li>
+                    <li><span class="title"><a href="#options">Options</a></span>
+                        <ul class="UL">
+                            <li><span class="title"><a href="#options_else"><span class="dollar">$</span>else</a></span></li>
+                        </ul>
+                    </li>
+                    <li><span class="title"><a href="#argSyntax">Argument Syntax</a></span>
+                        <ul class="UL">
+                            <li><span class="title"><a href="#argSyntax_Types">Argument Types</a></span>
+                                <ul class="UL">
+                                    <li><span class="title"><a href="#argSyntax_Types_a">a</a>&nbsp;&nbsp;<a href="#argSyntax_Types_a">[array]</a></span></li>
+                                    <li><span class="title"><a href="#argSyntax_Types_c">c</a>&nbsp;&nbsp;<a href="#argSyntax_Types_c">[class instance]</a></span></li>
+                                    <li><span class="title"><a href="#argSyntax_Types_C">C</a>&nbsp;&nbsp;<a href="#argSyntax_Types_C">[class]</a></span></li>
+                                    <li><span class="title"><a href="#argSyntax_Types_f">f</a>&nbsp;&nbsp;<a href="#argSyntax_Types_f">[function]</a></span></li>
+                                    <li><span class="title"><a href="#argSyntax_Types_n">n</a>&nbsp;&nbsp;<a href="#argSyntax_Types_n">[number]</a></span></li>
+                                    <li><span class="title"><a href="#argSyntax_Types_o">o</a>&nbsp;&nbsp;<a href="#argSyntax_Types_o">[object]</a></span></li>
+                                    <li><span class="title"><a href="#argSyntax_Types_s">s</a>&nbsp;&nbsp;<a href="#argSyntax_Types_s">[string]</a></span></li>
+                                    <li><span class="title"><a href="#argSyntax_Types_S">S</a>&nbsp;&nbsp;<a href="#argSyntax_Types_S">[string: case-sensetive]</a></span></li>
+                                </ul>
+                            </li>
+                            <li><span class="title"><a href="#argSyntax_Operators">Operators</a></span>
+                                <ul class="UL">
+                                    <li><span class="title"><a href="#argSyntax_Operators_sep">_</a>&nbsp;&nbsp;<a href="#argSyntax_Operators_sep">[seperator]</a></span></li>
+                                    <li><span class="title"><a href="#argSyntax_Operators_sub"><span class="dollar">$</span></a>&nbsp;&nbsp;<a href="#argSyntax_Operators_sub">[sub-type]</a></span></li>
+                                    <li><span class="title"><a href="#argSyntax_Operators_or">_or_</a>&nbsp;&nbsp;<a href="#argSyntax_Operators_or">[or]</a></span></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li><span class="title"><a href="#examples">Examples</a></span>
+                        <ul class="UL">
+                            <li><span class="title"><a href="#examples_Class">Class</a></span></li>
+                            <li><span class="title"><a href="#inheritance">Class Inheritance</a></span></li>
+                        </ul>
+                    </li>
+                    <li><span class="title"><a href="#SeeAlso">See Also</a></span>
+                        <ul class="UL">
+                            <li><span class="title"><a href="#seeAlso_core">core</a></span></li>
+                            <li><span class="title"><a href="#seeAlso_general">General</a></span></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+
+        <span class="topic" id="options">Options</span><a class="TOP" href="#TOP">&nbsp;&nbsp;</a><hr />
+            <ul class="UL">
+                <li><span id="options_else"class="title"><span class="dollar">$</span>else:</span> This function will be ran if no signitures can be matched.<a class="TOP" href="#TOP">&nbsp;&nbsp;</a><br />
+                    <div class="code">
+                        <span class="word"><span class="dollar">$</span>else</span><span class="colon">:</span> <span class="vari">fn</span><span class="comma">,</span>
+                        <div class="comments">
+                            <ul class="UL">
+                                <li><span class="title">fn : </span>Any function.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+
+        <span class="topic" id="argSyntax">Argument Syntax</span><a class="TOP" href="#TOP">&nbsp;&nbsp;</a><hr />
+            &nbsp;&nbsp;&nbsp;&nbsp;Naming a choice is like naming a variable, the same rules apply.<br />
+            <br />
+            <table class="table argSyntax">
+                <tr>
+                    <td class="header style1">Name</td>
+                    <td class="header style2">&nbsp;&nbsp;&nbsp;&nbsp;Result&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                </tr>
+                <tr><td class="name" style="width: 231px">s_n</td><td class="result match" style="width: 197px">matches: (string, number)</td></tr>
+                <tr><td class="name" style="width: 231px">s_n</td><td class="result good" 
+                        style="width: 197px">good</td></tr>
+                <tr><td class="name" style="width: 231px">my Choice</td><td class="result error" 
+                        style="width: 197px">error</td></tr>
+                <tr><td class="name" style="width: 231px">myChoice2</td><td class="result good" 
+                        style="width: 197px">good</td></tr>
+                <tr><td class="name" style="width: 231px">2myChoice</td><td class="result error" 
+                        style="width: 197px">error</td></tr>
+                <tr><td class="name" style="width: 231px">my_Choice</td><td class="result good" 
+                        style="width: 197px">good</td></tr>
+                <tr><td class="name" style="width: 231px">$myChoice</td><td class="result good" 
+                        style="width: 197px">good</td></tr>
+                <tr><td class="name" style="width: 231px">my@Choice</td><td class="result error" 
+                        style="width: 197px">error</td></tr>
+                <tr><td class="name" style="width: 231px">?myChoice</td><td class="result error" 
+                        style="width: 197px">error</td></tr>
+            </table>
+            <br />
+            <span class="subTopic" id="argSyntax_Types">Argument Types</span><a class="TOP" href="#TOP">&nbsp;&nbsp;</a><br />
+            <ul class="UL">
+                <li id="argSyntax_Types_a"><span class="title">a</span>&nbsp;&nbsp;[array]<a class="TOP" href="#TOP">&nbsp;&nbsp;</a><br />
+                    &nbsp;&nbsp;&nbsp;&nbsp;Specifies an <a class="scode" href="core_array.htm">array</a>. <a href="#argSyntax_Operators_sub">Sub-type</a> is a number to match with the length of the <a class="scode" href="core_array.htm">array</a> being passed.
+                    <div class="code">
+                        <span class="word">a</span><span class="colon">:</span> <span class="vari">fn</span><span class="comma">,</span>
+                        <hr />
+                        <span class="word">a</span><span class="dollar">$</span><span class="vari">num</span><span class="colon">:</span> <span class="vari">fn</span><span class="comma">,</span>
+                        <div class="comments">
+                            <ul class="UL">
+                                <li><span class="title">fn : </span>Function to be called.</li>
+                                <li><span class="title">num: </span>If the <a class="scode" href="core_array.htm">array</a>'s length does not match this number, the signiture will not match.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+                <li id="argSyntax_Types_c"><span class="title">c</span>&nbsp;&nbsp;[class instance]<a class="TOP" href="#TOP">&nbsp;&nbsp;</a><br />
+                    &nbsp;&nbsp;&nbsp;&nbsp;Specifies a <a href="core_ClassInst.htm">class instance</a><b>.</b> <a href="#argSyntax_Operators_sub">Sub-type</a> is a <a href="core_ValReg.htm">value-registry</a> key to a <a class="scode" href="core_Class.htm">Class</a> to match with the type of <a href="core_ClassInst.htm">class instance</a> being passed.
+                    <div class="code">
+                        <span class="word">c</span><span class="colon">:</span> <span class="vari">fn</span><span class="comma">,</span>
+                        <hr />
+                        <span class="word">c</span><span class="dollar">$</span><span class="vari">key</span><span class="colon">:</span> <span class="vari">fn</span><span class="comma">,</span>
+                        <div class="comments">
+                            <ul class="UL">
+                                <li><span class="title">fn : </span>Function to be called.</li>
+                                <li><span class="title">key: </span>Overload will grab the value that is paired with this string from the <a href="core_ValReg.htm">value-registry</a><b>.</b> If the value is <i>undefined</i> or not a <a class="scode" href="core_Class.htm">Class</a>, the signiture will not match<b>.</b>If the value is not the same <a class="scode" href="core_Class.htm">Class</a> type as the <a href="core_ClassInst.htm">class instance</a> being passed, or the <a href="core_ClassInst.htm">class instance</a> type is not an extension of the value-<a href="core_Class.htm">Class</a>: the signiture will not match<b>.</b></li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+                <li id="argSyntax_Types_C"><span class="title">C</span>&nbsp;&nbsp;[class]<a class="TOP" href="#TOP">&nbsp;&nbsp;</a><br />
+                    &nbsp;&nbsp;&nbsp;&nbsp;Specifies a <a class="scode" href="core_Class.htm">Class</a><b>.</b> <a href="#argSyntax_Operators_sub">Sub-type</a> is a <a href="core_ValReg.htm">value-registry</a> key to a <a class="scode" href="core_Class.htm">Class</a> to match with the <a class="scode" href="core_Class.htm">Class</a> being passed.
+                    <div class="code">
+                        <span class="word">c</span><span class="colon">:</span> <span class="vari">fn</span><span class="comma">,</span>
+                        <hr />
+                        <span class="word">c</span><span class="dollar">$</span><span class="vari">key</span><span class="colon">:</span> <span class="vari">fn</span><span class="comma">,</span>
+                        <div class="comments">
+                            <ul class="UL">
+                                <li><span class="title">fn : </span>Function to be called.</li>
+                                <li><span class="title">key: </span>Overload will grab the value that is paired with this string from the <a href="core_ValReg.htm">value-registry</a><b>.</b> If the value is <i>undefined</i> or not a <a class="scode" href="core_Class.htm">Class</a>, the signiture will not match<b>.</b>If the value is not the same <a class="scode" href="core_Class.htm">Class</a> as the <a class="scode" href="core_Class.htm">Class</a> being passed, the signiture will not match<b>.</b></li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+                <li id="argSyntax_Types_f"><span class="title">f</span>&nbsp;&nbsp;[function]<a class="TOP" href="#TOP">&nbsp;&nbsp;</a><br />
+                    &nbsp;&nbsp;&nbsp;&nbsp;Specifies a <a class="scode" href="core_function.htm">function</a><b>.</b> <a href="#argSyntax_Operators_sub">Sub-type</a> is a <a href="core_ValReg.htm">value-registry</a> key to a <a class="scode" href="core_function.htm">function</a> to match with the <a class="scode" href="core_function.htm">function</a> being passed.
+                    <div class="code">
+                        <span class="word">f</span><span class="colon">:</span> <span class="vari">fn</span><span class="comma">,</span>
+                        <hr />
+                        <span class="word">f</span><span class="dollar">$</span><span class="vari">key</span><span class="colon">:</span> <span class="vari">fn</span><span class="comma">,</span>
+                        <div class="comments">
+                            <ul class="UL">
+                                <li><span class="title">fn : </span>Function to be called.</li>
+                                <li><span class="title">key: </span>Overload will grab the value that is paired with this string from the <a href="core_ValReg.htm">value-registry</a><b>.</b> If the value is <i>undefined</i> or not a <a class="scode" href="core_function.htm">function</a>, the signiture will not match<b>.</b>If the value is not the same <a class="scode" href="core_function.htm">function</a>, the signiture will not match<b>.</b></li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+                <li id="argSyntax_Types_n"><span class="title">n</span>&nbsp;&nbsp;[number]<a class="TOP" href="#TOP">&nbsp;&nbsp;</a><br />
+                    &nbsp;&nbsp;&nbsp;&nbsp;Specifies a <a class="scode" href="core_number.htm">number</a><b>.</b> <a href="#argSyntax_Operators_sub">Sub-type</a> is a <a class="scode" href="core_number.htm">number</a> to match with the <a class="scode" href="core_number.htm">number</a> being passed.
+                    <div class="code">
+                        <span class="word">n</span><span class="colon">:</span> <span class="vari">fn</span><span class="comma">,</span>
+                        <hr />
+                        <span class="word">n</span><span class="dollar">$</span><span class="vari">num</span><span class="colon">:</span> <span class="vari">fn</span><span class="comma">,</span>
+                        <div class="comments">
+                            <ul class="UL">
+                                <li><span class="title">fn : </span>Function to be called.</li>
+                                <li><span class="title">num: </span>If this <a class="scode" href="core_number.htm">number</a> does not match the <a class="scode" href="core_number.htm">number</a> being passed, the signiture will not match.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+                <li id="argSyntax_Types_o"><span class="title">o</span>&nbsp;&nbsp;[object]<a class="TOP" href="#TOP">&nbsp;&nbsp;</a><br />
+                    &nbsp;&nbsp;&nbsp;&nbsp;Specifies an <a class="scode" href="core_object.htm">object</a><b>.</b> No <a href="#argSyntax_Operators_sub">Sub-type</a><b>.</b>
+                    <div class="code">
+                        <span class="word">o</span><span class="colon">:</span> <span class="vari">fn</span><span class="comma">,</span>
+                        <div class="comments">
+                            <ul class="UL">
+                                <li><span class="title">fn : </span>Function to be called.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+                <li id="argSyntax_Types_s"><span class="title">s</span>&nbsp;&nbsp;[string]<a class="TOP" href="#TOP">&nbsp;&nbsp;</a><br />
+                    &nbsp;&nbsp;&nbsp;&nbsp;Specifies a <a class="scode" href="core_string.htm">string</a><b>.</b> <a href="#argSyntax_Operators_sub">Sub-type</a> is a <a class="scode" href="core_string.htm">string</a> to match with the <a class="scode" href="core_string.htm">string</a> being passed [not case-sensative].
+                    <div class="code">
+                        <span class="word">s</span><span class="colon">:</span> <span class="vari">fn</span><span class="comma">,</span>
+                        <hr />
+                        <span class="word">s</span><span class="dollar">$</span><span class="vari">str</span><span class="colon">:</span> <span class="vari">fn</span><span class="comma">,</span>
+                        <div class="comments">
+                            <ul class="UL">
+                                <li><span class="title">fn : </span>Function to be called.</li>
+                                <li><span class="title">str: </span>If this <a class="scode" href="core_string.htm">string</a> does not match[ignoring case] the <a class="scode" href="core_string.htm">string</a> being passed, the signiture will not match.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+                <li id="argSyntax_Types_S"><span class="title">S</span>&nbsp;&nbsp;[string: case-sensative]<a class="TOP" href="#TOP">&nbsp;&nbsp;</a><br />
+                    &nbsp;&nbsp;&nbsp;&nbsp;Specifies a <a class="scode" href="core_string.htm">string</a><b>.</b> <a href="#argSyntax_Operators_sub">Sub-type</a> is a <a class="scode" href="core_string.htm">string</a> to match with the <a class="scode" href="core_string.htm">string</a> being passed [case-sensative].
+                    <div class="code">
+                        <span class="word">S</span><span class="colon">:</span> <span class="vari">fn</span><span class="comma">,</span>
+                        <hr />
+                        <span class="word">S</span><span class="dollar">$</span><span class="vari">str</span><span class="colon">:</span> <span class="vari">fn</span><span class="comma">,</span>
+                        <div class="comments">
+                            <ul class="UL">
+                                <li><span class="title">fn : </span>Function to be called.</li>
+                                <li><span class="title">str: </span>If this <a class="scode" href="core_string.htm">string</a> does not match[including case] the <a class="scode" href="core_string.htm">string</a> being passed, the signiture will not match.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+            <br />            
+            <span class="subTopic" id="argSyntax_Operators">Operators</span><a class="TOP" href="#TOP">&nbsp;&nbsp;</a><br />
+            <ul class="UL">
+                <li id="argSyntax_Operators_sep"><span class="title">_ [argument seperator]</span><a class="TOP" href="#TOP">&nbsp;&nbsp;</a><br />
+                    &nbsp;&nbsp;&nbsp;&nbsp;Use &nbsp;_&nbsp; to seperate arguments in the signiture string.
+                    <div class="code">
+                        arg1<span class="word">_</span>arg2<span class="colon">:</span> <span class="vari">val</span><span class="comma">,</span>
+                        <div class="comments">
+                            <ul class="UL">
+                                <li><span class="title">arg1, arg2: </span>These are argument strings.</li>
+                                <li><span class="title">val : </span>Function to be called.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+                <li id="argSyntax_Operators_sub"><span class="title"><span class="dollar">$</span> [sub-type]</span><a class="TOP" href="#TOP">&nbsp;&nbsp;</a><br />
+                    &nbsp;&nbsp;&nbsp;&nbsp;Used to provide more information about an accepted argument-type in the signiture string. Use to specify string values, class names, type names, structure names, and number values.
+                    <div class="code">
+                        arg1_arg2<span class="word"><span class="dollar">$</span></span>moreDat<span class="colon">:</span> <span class="vari">val</span><span class="comma">,</span>
+                        <div class="comments">
+                            <ul class="UL">
+                                <li><span class="title">arg1, arg2: </span>These are argument strings.</li>
+                                <li><span class="title">moreDat: </span>Sub-type string.</li>
+                                <li><span class="title">val : </span>Function to be called.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+                <li id="argSyntax_Operators_or"><span class="title">_or_</span><a class="TOP" href="#TOP">&nbsp;&nbsp;</a><br />
+                    &nbsp;&nbsp;&nbsp;&nbsp;Use &nbsp;_or_&nbsp; to make one function handle multiple signitures.
+                    <div class="code">
+                        Sig1<span class="word">_or_</span>Sig2<span class="colon">:</span> <span class="vari">val</span><span class="comma">,</span>
+                        <div class="comments">
+                            <ul class="UL">
+                                <li><span class="title">Sig1, Sig2: </span>These are argument signiture strings.</li>
+                                <li><span class="title">val : </span>Function to be called.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+            
+            </ul>
+            
+
+
+
+        <span class="topic" id="examples">Examples</span><a class="TOP" href="#TOP">&nbsp;&nbsp;</a><hr />
+            <span class="subTopic" id="examples_Choose">Choose</span><a class="TOP" href="#TOP">&nbsp;&nbsp;</a><br />
+                <div class="code">
+                    <span class="keyword">require</span><span class="op">(</span><span class="str">&#39;pops/pops.core&#39;</span><span class="op">)</span><span class="comma">.</span><a class="scode" href="core_Global.htm">Global</a><span class="op">.</span><a class="scode" href="core_Global.htm#shared_Pops">Pops</a><span class="op">()</span><span class="scol">;</span><br />
+                    <br />
+                    <span class="keyword">var</span> choice <span class="op">=</span> <span class="str">&#39;choice2&#39;</span><span class="op">;</span><br />
+                    <br />
+                    <span class="keyword">var</span> result <span class="op">=</span> <a class="scode word" href="#intro">Choose</a><span class="op">(</span>choice<span class="op">, {</span><br />
+                        &nbsp;&nbsp;&nbsp;&nbsp;choice1<span class="op">:</span> <span class="str">&#39;- Choice 1 -&#39;</span><span class="op">,</span><br />
+                        &nbsp;&nbsp;&nbsp;&nbsp;choice2<span class="op">:</span> <span class="str">&#39;- Choice 2 -&#39;</span><span class="op">,</span><br />
+                        &nbsp;&nbsp;&nbsp;&nbsp;choice3<span class="op">:</span> <span class="str">&#39;- Choice 3 -&#39;</span><span class="op">,</span><br />
+                        &nbsp;&nbsp;&nbsp;&nbsp;choice4<span class="op">:</span> <span class="str">&#39;- Choice 4 -&#39;</span><br />
+                    <span class="op">});</span><br />
+                    <br />
+                    <a class="scode" href="core_cout_sout.htm#intro">cout</a><span class="op">(</span>result<span class="op">);</span>
+                </div><br />
+            <br />
+
+            <span class="subTopic" id="examples_else"><span class="dollar">$</span>else</span><a class="TOP" href="#TOP">&nbsp;&nbsp;</a><br />
+                <div class="code">
+                    <span class="keyword">require</span><span class="op">(</span><span class="str">&#39;pops/pops.core&#39;</span><span class="op">)</span><span class="comma">.</span><a class="scode" href="core_Global.htm">Global</a><span class="op">.</span><a class="scode" href="core_Global.htm#shared_Pops">Pops</a><span class="op">()</span><span class="scol">;</span><br />
+                    <br />
+                    <span class="keyword">var</span> choices <span class="op">=</span> <span class="op">{</span><br />
+                        &nbsp;&nbsp;&nbsp;&nbsp;choice1<span class="op">:</span> <span class="str">&#39;- Choice 1 -&#39;</span><span class="op">,</span><br />
+                        &nbsp;&nbsp;&nbsp;&nbsp;choice2<span class="op">:</span> <span class="str">&#39;- Choice 2 -&#39;</span><span class="op">,</span><br />
+                        &nbsp;&nbsp;&nbsp;&nbsp;<span class="dollar">$</span>else<span class="op">:</span> <span class="str">&#39;- Else -&#39;</span><span class="op">,</span><br />
+                    <span class="op">};</span><br />
+                    <br />
+
+                    <a class="scode" href="core_cout_sout.htm#intro">cout</a><span class="op">(</span><a class="scode word" href="#intro">Choose</a><span class="op">(</span><span class="str">&#39;choice2&#39;</span><span class="op">,</span> choices<span class="op">)</span><span class="op">);</span><br />
+                    <a class="scode" href="core_cout_sout.htm#intro">cout</a><span class="op">(</span><a class="scode word" href="#intro">Choose</a><span class="op">(</span><span class="str">&#39;choice6&#39;</span><span class="op">,</span> choices<span class="op">)</span><span class="op">);</span><br />
+                    <a class="scode" href="core_cout_sout.htm#intro">cout</a><span class="op">(</span><a class="scode word" href="#intro">Choose</a><span class="op">(</span><span class="str">&#39;choice1&#39;</span><span class="op">,</span> choices<span class="op">)</span><span class="op">);</span><br />
+                </div><br />
+            <br />
+
+            <span class="subTopic" id="examples_run"><span class="dollar">$</span>run</span><a class="TOP" href="#TOP">&nbsp;&nbsp;</a><br />
+                <div class="code">
+                    <span class="keyword">require</span><span class="op">(</span><span class="str">&#39;pops/pops.core&#39;</span><span class="op">)</span><span class="comma">.</span><a class="scode" href="core_Global.htm">Global</a><span class="op">.</span><a class="scode" href="core_Global.htm#shared_Pops">Pops</a><span class="op">()</span><span class="scol">;</span><br />
+                    <br />
+                    <span class="keyword">var</span> choices <span class="op">=</span> <span class="op">{</span><br />
+                        &nbsp;&nbsp;&nbsp;&nbsp;foo<span class="op">:</span> <a class="scode keyword" href="core_function.htm">function</a><span class="op">(</span><span class="op">) {</span> <span class="keyword">return</span> <span class="str">&#39;FOO!&#39;</span><span class="op">; },</span><br />
+                        &nbsp;&nbsp;&nbsp;&nbsp;Bar<span class="op">:</span> <span class="str">&#39;BAR!&#39;</span><span class="op">,</span><br />
+                        &nbsp;&nbsp;&nbsp;&nbsp;hELLo<span class="op">:</span> <a class="scode keyword" href="core_function.htm">function</a><span class="op">(</span><span class="op">) {</span> <span class="keyword">return</span> <span class="str">&#39;HELLO!&#39;</span><span class="op">; },</span><br />
+                        &nbsp;&nbsp;&nbsp;&nbsp;world<span class="op">:</span> <a class="scode keyword" href="core_function.htm">function</a><span class="op">(</span><span class="op">) {</span> <span class="keyword">return</span> <a class="scode keyword" href="core_function.htm">function</a><span class="op">(</span><span class="op">) {</span> <span class="keyword">return</span> <span class="str">&#39;WORLD!&#39;</span><span class="op">;</span><span class="op"> } },</span><br />
+                    <span class="op">};</span><br />
+                    <br />
+                    <span class="keyword">var</span> choices2 <span class="op">=</span> <span class="op">{</span><br />
+                        &nbsp;&nbsp;&nbsp;&nbsp;<a class="scode" href="#choices_run "><span class="dollar">$</span>run</a><span class="op">:</span> <span class="keyword">true</span><span class="op">,</span><br />
+                        &nbsp;&nbsp;&nbsp;&nbsp;foo<span class="op">:</span> <a class="scode keyword" href="core_function.htm">function</a><span class="op">(</span><span class="op">) {</span> <span class="keyword">return</span> <span class="str">&#39;FOO!&#39;</span><span class="op">; },</span><br />
+                        &nbsp;&nbsp;&nbsp;&nbsp;Bar<span class="op">:</span> <span class="str">&#39;BAR!&#39;</span><span class="op">,</span><br />
+                        &nbsp;&nbsp;&nbsp;&nbsp;hELLo<span class="op">:</span> <a class="scode keyword" href="core_function.htm">function</a><span class="op">(</span><span class="op">) {</span> <span class="keyword">return</span> <span class="str">&#39;HELLO!&#39;</span><span class="op">; },</span><br />
+                        &nbsp;&nbsp;&nbsp;&nbsp;world<span class="op">:</span> <a class="scode keyword" href="core_function.htm">function</a><span class="op">(</span><span class="op">) {</span> <span class="keyword">return</span> <a class="scode keyword" href="core_function.htm">function</a><span class="op">(</span><span class="op">) {</span> <span class="keyword">return</span> <span class="str">&#39;WORLD!&#39;</span><span class="op">;</span><span class="op"> } },</span><br />
+                    <span class="op">};</span><br />
+                    <br />
+                    <a class="scode" href="core_cout_sout.htm#intro">cout</a><span class="op">(</span><a class="scode word" href="#intro">Choose</a><span class="op">(</span><span class="str">&#39;Foo&#39;</span><span class="op">,</span> choices<span class="op">)</span><span class="op">);</span><br />
+                    <a class="scode" href="core_cout_sout.htm#intro">cout</a><span class="op">(</span><a class="scode word" href="#intro">Choose</a><span class="op">(</span><span class="str">&#39;Bar&#39;</span><span class="op">,</span> choices<span class="op">)</span><span class="op">);</span><br />
+                    <a class="scode" href="core_cout_sout.htm#intro">cout</a><span class="op">(</span><a class="scode word" href="#intro">Choose</a><span class="op">(</span><span class="str">&#39;hello&#39;</span><span class="op">,</span> choices<span class="op">)</span><span class="op">);</span><br />
+                    <a class="scode" href="core_cout_sout.htm#intro">cout</a><span class="op">(</span><a class="scode word" href="#intro">Choose</a><span class="op">(</span><span class="str">&#39;wORLd&#39;</span><span class="op">,</span> choices<span class="op">)</span><span class="op">);</span><br />
+                    <br />
+                    <a class="scode" href="core_cout_sout.htm#intro">cout</a><span class="op">(</span><span class="op">);</span><br />
+                    <br />
+                    <a class="scode" href="core_cout_sout.htm#intro">cout</a><span class="op">(</span><a class="scode word" href="#intro">Choose</a><span class="op">(</span><span class="str">&#39;Foo&#39;</span><span class="op">,</span> choices2<span class="op">)</span><span class="op">);</span><br />
+                    <a class="scode" href="core_cout_sout.htm#intro">cout</a><span class="op">(</span><a class="scode word" href="#intro">Choose</a><span class="op">(</span><span class="str">&#39;Bar&#39;</span><span class="op">,</span> choices2<span class="op">)</span><span class="op">);</span><br />
+                    <a class="scode" href="core_cout_sout.htm#intro">cout</a><span class="op">(</span><a class="scode word" href="#intro">Choose</a><span class="op">(</span><span class="str">&#39;hello&#39;</span><span class="op">,</span> choices2<span class="op">)</span><span class="op">);</span><br />
+                    <a class="scode" href="core_cout_sout.htm#intro">cout</a><span class="op">(</span><a class="scode word" href="#intro">Choose</a><span class="op">(</span><span class="str">&#39;wORLd&#39;</span><span class="op">,</span> choices2<span class="op">)</span><span class="op">);</span><br />
+                </div><br />
+            <br />
+
+            <span class="subTopic" id="examples_or">_or_</span><a class="TOP" href="#TOP">&nbsp;&nbsp;</a><br />
+                <div class="code">
+                    <span class="keyword">require</span><span class="op">(</span><span class="str">&#39;pops/pops.core&#39;</span><span class="op">)</span><span class="comma">.</span><a class="scode" href="core_Global.htm">Global</a><span class="op">.</span><a class="scode" href="core_Global.htm#shared_Pops">Pops</a><span class="op">()</span><span class="scol">;</span><br />
+                    <br />
+                    <span class="keyword">var</span> choices <span class="op">=</span> <span class="op">{</span><br />
+                        &nbsp;&nbsp;&nbsp;&nbsp;choice1<span class="op">:</span> <span class="str">&#39;- Choice 1 -&#39;</span><span class="op">,</span><br />
+                        &nbsp;&nbsp;&nbsp;&nbsp;choice2_or_choice3<span class="op">:</span> <span class="str">&#39;- Choice 2 & 3 -&#39;</span><span class="op">,</span><br />
+                        &nbsp;&nbsp;&nbsp;&nbsp;choice4<span class="op">:</span> <span class="str">&#39;- Choice 4 -&#39;</span><span class="op">,</span><br />
+                    <span class="op">};</span><br />
+                    <br />
+
+                    <a class="scode" href="core_cout_sout.htm#intro">cout</a><span class="op">(</span><a class="scode word" href="#intro">Choose</a><span class="op">(</span><span class="str">&#39;choice1&#39;</span><span class="op">,</span> choices<span class="op">)</span><span class="op">);</span><br />
+                    <a class="scode" href="core_cout_sout.htm#intro">cout</a><span class="op">(</span><a class="scode word" href="#intro">Choose</a><span class="op">(</span><span class="str">&#39;choice2&#39;</span><span class="op">,</span> choices<span class="op">)</span><span class="op">);</span><br />
+                    <a class="scode" href="core_cout_sout.htm#intro">cout</a><span class="op">(</span><a class="scode word" href="#intro">Choose</a><span class="op">(</span><span class="str">&#39;choice3&#39;</span><span class="op">,</span> choices<span class="op">)</span><span class="op">);</span><br />
+                    <a class="scode" href="core_cout_sout.htm#intro">cout</a><span class="op">(</span><a class="scode word" href="#intro">Choose</a><span class="op">(</span><span class="str">&#39;choice4&#39;</span><span class="op">,</span> choices<span class="op">)</span><span class="op">);</span><br />
+                </div><br />
+            <br />
+
+        <span class="topic" id="SeeAlso">See Also</span><a class="TOP" href="#TOP">&nbsp;&nbsp;</a><hr />
+            <ul class="UL">
+                <li><span class="title" id="seeAlso_core"><a href="core.htm">core</a></span><a class="TOP" href="#TOP">&nbsp;&nbsp;</a>
+                    <ul class="UL">
+                        <li><span class="title"><a href="core_cout_sout.htm">cout</a></span></li>
+                        <li><span class="title"><a href="core_IsMode.htm">IsMode</a></span></li>
+                        <li><span class="title"><a href="core_Modal.htm">Modal</a></span></li>
+                        <li><span class="title"><a href="core_Mode.htm">Mode</a></span></li>
+                        <li><span class="title"><a href="core_Modes.htm">Modes</a></span></li>
+                    </ul>
+                </li>
+                <li><span class="title" id="seeAlso_general">General</span><a class="TOP" href="#TOP">&nbsp;&nbsp;</a>
+                    <ul class="UL">
+                        <li><span class="title"><a href="Contents.htm">Contents</a></span></li>
+                    </ul>
+                </li>
+            </ul>
+
+    </div>
+    </body>
+</html>

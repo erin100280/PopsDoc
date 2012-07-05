@@ -1,0 +1,229 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head>
+    <title>Pops: function</title>
+    <link rel="stylesheet" href="PopsDoc.css" type="text//css" media="all" charset="utf-8" />
+</head>
+<body id="TOP">
+    <div id="header" class="header">
+        <p class="titleLinks">
+            <a href="Contents.htm">Pops.js Documentatin</a>
+            <span> : </span> 
+            <a href="core.htm">core</a>
+            <span> : </span> 
+            <a href="core_function.htm">Function</a>
+        </p>
+        <p class="slogan">A Framework For Node.JS</p>
+        <a class="help" href="help.htm">help</a>
+        <div class="website"><p><a href="https://sites.google.com/site/popsnode/">Pops Website</a></p></div>
+        <div class="copyright"><p>(c) 2012 Erin Bradford</p></div>
+        <hr class="HR" />
+    </div>
+    <div id="main">
+        <span class="subTopic" id="intro">core.Function</span>&nbsp;&nbsp;&nbsp;&nbsp;(native)<a class="TOP" href="#TOP">&nbsp;&nbsp;</a><br />
+            &nbsp;&nbsp;&nbsp;&nbsp;Pops extends the native JS function type. Adding many useful features to the base and instances.<br />
+        <br />
+        <span class="subTopic" id="general_file">File</span><a class="TOP" href="#TOP">&nbsp;&nbsp;</a><br />
+            &nbsp;&nbsp;&nbsp;&nbsp;pops/pops.core.js<br />
+        <br />
+        <span class="subTopic" id="syntax">Syntax</span><a class="TOP" href="#TOP">&nbsp;&nbsp;</a><br />
+            <div class="code">
+                <span class="keyword">var</span> foo <span class="op">=</span> <span class="keyword">new</span> <span class="word">Class</span><span class="op">(</span><span class="vari">specs</span><span class="optionalArgs">&nbsp;<span class="comma">,</span> <span class="vari">onLoaded</span>&nbsp; </span><span class="op"> )</span><span class="scol">;</span>
+                <hr />
+                <span class="keyword">var</span> foo <span class="op">=</span> <span class="word">Class</span><span class="op">(</span><span class="vari">specs</span> <span class="optionalArgs">&nbsp;<span class="comma">,</span><span class="vari">onLoaded</span>&nbsp; </span><span class="op">)</span><span class="scol">;</span>
+                <div class="comments">
+                    <ul class="UL">
+                        <li><span class="title"><a href="#specs">specs</a> :</span> An object containing the specifications for the new class.</li>
+                        <li><span class="title">onLoaded :</span> optional - The function to be called after the new class is created.</span></span></li>
+                    </ul>
+                </div>
+            </div>
+        <br />
+
+        <span class="subTopic" id="contents">Contents</span><a class="TOP" href="#TOP">&nbsp;&nbsp;</a><br />
+            <div class="contents">
+                <ul class="UL">
+                    <li><span class="title"><a href="#main">General</a></span>
+                        <ul class="UL">
+                            <li><span class="title"><a href="#intro">core.function</a></span></li>
+                            <li><span class="title"><a href="#general_file">File</a></span></li>
+                            <li><span class="title"><a href="#syntax">Syntax</a></span></li>
+                            <li><span class="title"><a href="#contents">Contents</a></span></li>
+                        </ul>
+                    </li>
+                    <li><span class="title"><a href="#members">Members</a></span>
+                        <ul class="UL">
+                            <li><span class="title"><a href="#members_Bind">Bind</a></span></li>
+                            <li><span class="title"><a href="#members_aApply">aApply</a></span></li>
+                            <li><span class="title"><a href="#members_aCall">aCall</a></span></li>
+                            <li><span class="title"><a href="#members_Reg">Reg</a></span></li>
+                            <li><span class="title"><a href="#members_Str">Str</a></span></li>
+                            <li><span class="title"><a href="#members_Private">Private</a></span></li>
+                            <li><span class="title"><a href="#members_Protected">Protected</a></span></li>
+                            <li><span class="title"><a href="#members_Shared">Shared</a></span></li>
+                            <li><span class="title"><a href="#members_PrivShare">PrivShare</a></span></li>
+                        </ul>
+                    </li>
+                    <li><span class="title"><a href="#SeeAlso">See Also</a></span>
+                        <ul class="UL">
+                            <li><span class="title"><a href="#seeAlso_core">core</a></span></li>
+                            <li><span class="title"><a href="#seeAlso_general">General</a></span></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+
+        <span class="topic" id="members">Members</span><a class="TOP" href="#TOP">&nbsp;&nbsp;</a><hr />
+            <ul class="UL">
+                <li class="bli"><span class="title" id="members_Bind">Bind:</span> Returns a copy of the function, where the <i><span class="keyword">this</span></i> object is the object specified by the <i>obj</i> argument.<a class="TOP" href="#TOP">&nbsp;&nbsp;</a><br />
+                    <div class="code">
+                        <span class="keyword">var</span> <span class="vari">bar</span> <span class="op">=</span> <span class="vari">foo</span><span class="op">.</span><span class="word">Bind</span><span class="op">(</span><span class="vari">obj</span><span class="op">);</span><br />
+                        <div class="comments">
+                            <ul class="UL">
+                                <li><span class="title">bar :</span> This will reference <i>oo</i>.</li>
+                                <li><span class="title">foo :</span> Any function.</li>
+                                <li><span class="title">obj :</span> Any object.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+                <li class="bli"><span class="title" id="members_aApply">aApply:</span> Calls the function on the next tick of the event loop. Accepts an array(arguments) to pass to the function. Returns <i>parent-function</i>.<a class="TOP" href="#TOP">&nbsp;&nbsp;</a><br />
+                    <div class="code">
+                        <span class="keyword">var</span> <span class="vari">bar</span> <span class="op">=</span> <span class="vari">foo</span><span class="op">.</span><span class="word">aApply</span><span class="op">(</span><span class="vari">arg</span><span class="op">,</span> <span class="vari">_this</span><span class="op">);</span><br />
+                        <hr />
+                        <span class="vari">foo</span> <span class="op">=</span> <span class="vari">foo</span><span class="op">.</span><span class="word">aApply</span><span class="op">(</span><span class="vari">arg</span><span class="op">,</span> <span class="vari">_this</span><span class="op">);</span><br />
+                        <hr />
+                        <span class="vari">foo</span><span class="op">.</span><span class="word">aApply</span><span class="op">(</span><span class="vari">arg</span><span class="op">,</span> <span class="vari">_this</span><span class="op">);</span><br />
+                        <div class="comments">
+                            <ul class="UL">
+                                <li><span class="title">bar :</span> This will reference <i>foo</i>.</li>
+                                <li><span class="title">foo :</span> Any function.</li>
+                                <li><span class="title">args :</span> An array or arguments-object. The contents will be passed to the function when it is called.</li>
+                                <li><span class="title">_this :</span> An object to be used as the <i><span class="keyword">this</span></i> object by the function when it is called. If omitted, the function will use it's normal <i><span class="keyword">this</span></i> object.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+                <li class="bli"><span class="title" id="members_aCall">aCall:</span> Calls the function on the next tick of the event loop. Returns <i>parent-function</i>.<a class="TOP" href="#TOP">&nbsp;&nbsp;</a><br />
+                    <div class="code">
+                        <span class="keyword">var</span> <span class="vari">bar</span> <span class="op">=</span> <span class="vari">foo</span><span class="op">.</span><span class="word">aCall</span><span class="op">(</span><span class="vari">arg1</span><span class="op">,</span> <span class="vari">arg2</span><span class="op">);</span><br />
+                        <hr />
+                        <span class="vari">foo</span> <span class="op">=</span> <span class="vari">foo</span><span class="op">.</span><span class="word">aCall</span><span class="op">(</span><span class="vari">arg1</span><span class="op">,</span> <span class="vari">arg2</span><span class="op">);</span><br />
+                        <hr />
+                        <span class="vari">foo</span><span class="op">.</span><span class="word">aCall</span><span class="op">(</span><span class="vari">arg1</span><span class="op">);</span><br />
+                        <div class="comments">
+                            <ul class="UL">
+                                <li><span class="title">bar :</span> This will reference <i>foo</i>.</li>
+                                <li><span class="title">foo :</span> Any function.</li>
+                                <li><span class="title">arg1, arg2 :</span> These will be passed as arguments to <i>foo</i>, when called. You can put an unlimited number of arguments here.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+                <li class="bli"><span class="title" id="members_Reg">Reg:</span> Registers the function to the <a class="" href="core_ValReg.htm">value-registry</a>. Returns <i>parent-function</i>.<a class="TOP" href="#TOP">&nbsp;&nbsp;</a><br />
+                    <div class="code">
+                        <span class="keyword">var</span> <span class="vari">foo</span> <span class="op">=</span> <a class="scode keyword" href="function.htm">function</a><span class="op">(</span><span class="op">) {</span> <span class="commentBlock">/* code */</span> <span class="op">}.</span><span class="word">Reg</span><span class="op">(</span><span class="vari">unique_name</span><span class="op">);</span>
+                        <hr />
+                        <span class="vari">bar</span> <span class="op">=</span> <span class="vari">bar</span><span class="op">.</span><span class="word">Reg</span><span class="op">(</span><span class="vari">unique_name</span><span class="op">);</span>
+                        <hr />
+                        <span class="vari">bar</span><span class="op">.</span><span class="word">Reg</span><span class="op">(</span><span class="vari">unique_name</span><span class="op">);</span>
+                        <div class="comments">
+                            <ul class="UL">
+                                <li><span class="title">foo :</span> This will reference the function.</li>
+                                <li><span class="title">bar :</span> Any function.</li>
+                                <li><span class="title">unique_name :</span> A string used to identify this function. when you go to retrieve this function from the <a href="core_ValReg.htm">value-registry</a>, you can use this value as the <i>id</i> argument.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+                <li class="bli"><span class="title" id="members_Str">Str:</span> Returns a string representation of the function. Same as <i>toString</i>.<a class="TOP" href="#TOP">&nbsp;&nbsp;</a><br />
+                    <div class="code">
+                        <span class="keyword">var</span> <span class="vari">foo</span> <span class="op">=</span> <a class="scode keyword" href="function.htm">function</a><span class="op">(</span><span class="op">) {</span> <span class="commentBlock">/* code */</span> <span class="op">}.</span><span class="word">Str</span><span class="op">();</span>
+                        <div class="comments">
+                            <ul class="UL">
+                                <li><span class="title">foo :</span> This will be a string representing the <i>parent-function</i>.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+                <li class="bli"><span class="title" id="members_Private">Private:</span> Makes the function private when included in a <a class="scode"href="core.Class.htm">Class</a>. Returns <i>parent-function</i>.<a class="TOP" href="#TOP">&nbsp;&nbsp;</a><br />
+                    <div class="code">
+                        <span class="keyword">var</span> <span class="vari">bar</span> <span class="op">=</span> <span class="vari">foo</span><span class="op">.</span><span class="word">Private</span><span class="op">();</span><br />
+                        <hr />
+                        <span class="vari">foo</span> <span class="op">=</span> <span class="vari">foo</span><span class="op">.</span><span class="word">Private</span><span class="op">();</span><br />
+                        <hr />
+                        <span class="vari">foo</span><span class="op">.</span><span class="word">Private</span><span class="op">();</span><br />
+                        <div class="comments">
+                            <ul class="UL">
+                                <li><span class="title">bar :</span> Will contain a reference to <i>foo</i>.</li>
+                                <li><span class="title">foo :</span> Any function.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+                <li class="bli"><span class="title" id="members_Protected">Protected:</span> Makes the function protected when included in a <a class="scode"href="core.Class.htm">Class</a>. Returns <i>parent-function</i>.<a class="TOP" href="#TOP">&nbsp;&nbsp;</a><br />
+                    <div class="code">
+                        <span class="keyword">var</span> <span class="vari">bar</span> <span class="op">=</span> <span class="vari">foo</span><span class="op">.</span><span class="word">Protected</span><span class="op">();</span><br />
+                        <hr />
+                        <span class="vari">foo</span> <span class="op">=</span> <span class="vari">foo</span><span class="op">.</span><span class="word">Protected</span><span class="op">();</span><br />
+                        <hr />
+                        <span class="vari">foo</span><span class="op">.</span><span class="word">Protected</span><span class="op">();</span><br />
+                        <div class="comments">
+                            <ul class="UL">
+                                <li><span class="title">bar :</span> Will contain a reference to <i>foo</i>.</li>
+                                <li><span class="title">foo :</span> Any function.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+                <li class="bli"><span class="title" id="members_Shared">Shared:</span> Makes the function shared when included in a <a class="scode"href="core.Class.htm">Class</a>. Returns <i>parent-function</i>.<a class="TOP" href="#TOP">&nbsp;&nbsp;</a><br />
+                    <div class="code">
+                        <span class="keyword">var</span> <span class="vari">bar</span> <span class="op">=</span> <span class="vari">foo</span><span class="op">.</span><span class="word">Shared</span><span class="op">();</span><br />
+                        <hr />
+                        <span class="vari">foo</span> <span class="op">=</span> <span class="vari">foo</span><span class="op">.</span><span class="word">Shared</span><span class="op">();</span><br />
+                        <hr />
+                        <span class="vari">foo</span><span class="op">.</span><span class="word">Shared</span><span class="op">();</span><br />
+                        <div class="comments">
+                            <ul class="UL">
+                                <li><span class="title">bar :</span> Will contain a reference to <i>foo</i>.</li>
+                                <li><span class="title">foo :</span> Any function.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+                <li class="bli"><span class="title" id="members_PrivShare">PrivShare:</span> Makes the function private and shared when included in a <a class="scode"href="core.Class.htm">Class</a>. Returns <i>parent-function</i>.<a class="TOP" href="#TOP">&nbsp;&nbsp;</a><br />
+                    <div class="code">
+                        <span class="keyword">var</span> <span class="vari">bar</span> <span class="op">=</span> <span class="vari">foo</span><span class="op">.</span><span class="word">PrivShare</span><span class="op">();</span><br />
+                        <hr />
+                        <span class="vari">foo</span> <span class="op">=</span> <span class="vari">foo</span><span class="op">.</span><span class="word">PrivShare</span><span class="op">();</span><br />
+                        <hr />
+                        <span class="vari">foo</span><span class="op">.</span><span class="word">PrivShare</span><span class="op">();</span><br />
+                        <div class="comments">
+                            <ul class="UL">
+                                <li><span class="title">bar :</span> Will contain a reference to <i>foo</i>.</li>
+                                <li><span class="title">foo :</span> Any function.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+       
+        <span class="topic" id="SeeAlso">See Also</span><a class="TOP" href="#TOP">&nbsp;&nbsp;</a><hr />
+            <ul class="UL">
+                <li><span class="title" id="seeAlso_core"><a href="core.htm">core</a></span><a class="TOP" href="#TOP">&nbsp;&nbsp;</a>
+                    <ul class="UL">
+                        <li><span class="title"><a href="core_ClassInstance.htm">Class (Instance)</a></span></li>
+                        <li><span class="title"><a href="core_cout_sout.htm">cout</a></span></li>
+                        <li><span class="title"><a href="core_def.htm">def</a></span></li>
+                    </ul>
+                </li>
+                <li><span class="title" id="seeAlso_general">General</span><a class="TOP" href="#TOP">&nbsp;&nbsp;</a>
+                    <ul class="UL">
+                        <li><span class="title"><a href="Contents.htm">Contents</a></span></li>
+                    </ul>
+                </li>
+            </ul>
+
+    </div>
+    </body>
+</html>

@@ -1,0 +1,129 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head>
+    <title></title>
+    <link rel="stylesheet" href="PopsDoc.css" type="text//css" media="all" charset="utf-8" />
+</head>
+<body id="TOP">
+    <div id="header" class="header">
+        <p class="titleLinks">
+            <a href="Contents.htm">Pops.js Documentatin</a>
+            <span> : </span> 
+            <a href="core.htm">core</a>
+            <span> : </span> 
+            <a href="core_Global.htm">Global</a>
+        </p>
+        <p class="slogan">A Framework For Node.JS</p>
+        <a class="help" href="help.htm">help</a>
+        <div class="website"><p><a href="https://sites.google.com/site/popsnode/">Pops Website</a></p></div>
+        <div class="copyright"><p>(c) 2012 Erin Bradford</p></div>
+        <hr class="HR" />
+    </div>
+    <div id="main">
+        <span class="subTopic" id="intro">core.Global</span>&nbsp;&nbsp;&nbsp;&nbsp;(function)<a class="TOP" href="#TOP">&nbsp;&nbsp;</a><br />
+            &nbsp;&nbsp;&nbsp;&nbsp;Creates global variables for all items in an <a class="scode" href="core_object.htm">object</a><b>.</b> Returns the <a class="scode" href="core_object.htm">object</a> passed to it<b>.</b><br />
+        <br />
+        <span class="subTopic" id="general_file">File</span><a class="TOP" href="#TOP">&nbsp;&nbsp;</a><br />
+            &nbsp;&nbsp;&nbsp;&nbsp;pops/pops.core.js<br />
+        <br />
+        <span class="subTopic" id="syntax">Syntax</span><a class="TOP" href="#TOP">&nbsp;&nbsp;</a><br />
+            <div class="code">
+                <span class="keyword">var</span> foo <span class="op">=</span> <span class="word">Global</span><span class="op">(</span><span class="vari">globalsObj</span></span><span class="op">)</span><span class="scol">;</span>
+                <hr />
+                <span class="word">Global</span><span class="op">(</span><span class="vari">globalsObj</span></span><span class="op">)</span><span class="scol">;</span>
+                <div class="comments">
+                    <ul class="UL">
+                        <li><span class="title">globalsObj:</span> An object containing the values to be made global.</li>
+                    </ul>
+                </div>
+            </div>
+        <br />
+
+        <span class="subTopic" id="contents">Contents</span><a class="TOP" href="#TOP">&nbsp;&nbsp;</a><br />
+            <div class="contents">
+                <ul class="UL">
+                    <li><span class="title"><a href="#main">General</a></span>
+                        <ul class="UL">
+                            <li><span class="title"><a href="#intro">core.Global</a></span></li>
+                            <li><span class="title"><a href="#general_file">File</a></span></li>
+                            <li><span class="title"><a href="#syntax">Syntax</a></span></li>
+                            <li><span class="title"><a href="#contents">Contents</a></span></li>
+                        </ul>
+                    </li>
+                    <li><span class="title"><a href="#shared">Shared Members</a></span>
+                        <ul class="UL">
+                            <li><span class="title"><a href="#shared_Pops">Pops</a></span></li>
+                        </ul>
+                    </li>
+                    <li><span class="title"><a href="#examples">Examples</a></span>
+                        <ul class="UL">
+                            <li><span class="title"><a href="#examples_Global">Global</a></span></li>
+                            <li><span class="title"><a href="#examples_Global_Pops">Global.Pops</a></span></li>
+                        </ul>
+                    </li>
+                    <li><span class="title"><a href="#SeeAlso">See Also</a></span>
+                        <ul class="UL">
+                            <li><span class="title"><a href="#seeAlso_core">core</a></span></li>
+                            <li><span class="title"><a href="#seeAlso_general">General</a></span></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+
+        <span class="topic" id="shared">Shared Members</span><a class="TOP" href="#TOP">&nbsp;&nbsp;</a><hr />
+            <ul class="UL">
+                <li class="bli"><span class="title" id="shared_Pops">Pops:</span> This function makes the entire pops.core global<b>.</b> Returns a reference to <span class="word">Global</span>l<b>.</b><a class="TOP" href="#TOP">&nbsp;&nbsp;</a><br />
+                    <div class="code">
+                        <span class="word">Global</span><span class="colon">.</span><span class="word">Pops</span><span class="colon">()</span><span class="scol">;</span>
+                        <hr />
+                        <span class="keyword">var</span> <span class="vari">foo</span> <span class="op">=</span> <span class="word">Global</span><span class="colon">.</span><span class="word">Pops</span><span class="colon">()</span><span class="scol">;</span>
+                        
+                        <br />
+                        <div class="comments">
+                            <ul class="UL">
+                                <li><span class="title">foo:</span> Will be a reference to <a class="scode" href="#intro">Global</a><b>.</b></li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+
+        <span class="topic" id="examples">Examples</span><a class="TOP" href="#TOP">&nbsp;&nbsp;</a><hr />
+            <span class="subTopic" id="examples_Global">Global</span><a class="TOP" href="#TOP">&nbsp;&nbsp;</a><br />
+                <div class="code">
+                    <span class="keyword">var</span> pops <span class="op">=</span> <span class="keyword">require</span><span class="op">(</span><span class="str">&#39;pops/pops.core&#39;</span><span class="op">)</span><span class="scol">;</span><br />
+                    <br />
+                    pops<span class="op">.</span><a class="scode" href="#intro">Global</a><span class="op">({</span><br />
+                        &nbsp;&nbsp;&nbsp;&nbsp;myVal<span class="op">:</span> <span class="str">&#39;Hello World&#39;</span><span class="op">,</span><br />
+                        &nbsp;&nbsp;&nbsp;&nbsp;myFunction<span class="op">:</span> <a class="scode keyword" href="function.htm">function</a><span class="op">(</span><span class="op">) {</span> pops<span class="op">.</span><a class="scode" href="core_cout_sout.htm">cout</a><span class="op">(</span>myVal<span class="op">);</span> <span class="op">}</span><br />
+                    <span class="op">});</span><br />
+                    <br />
+                    myFunction<span class="op">();</span>
+
+
+                </div><br />
+            <br />
+            <span class="subTopic" id="examples_Global_Pops">Global.Pops</span><a class="TOP" href="#TOP">&nbsp;&nbsp;</a><br />
+                <div class="code">
+                    <span class="keyword">require</span><span class="op">(</span><span class="str">&#39;pops/pops.core&#39;</span><span class="op">)</span><span class="comma">.</span><a class="scode" href="core_Global.htm">Global</a><span class="op">.</span><a class="scode" href="core_Global.htm#shared_Pops">Pops</a><span class="op">()</span><span class="scol">;</span><br />
+                    <a class="scode" href="core_cout_sout.htm">cout</a><span class="op">(</span><span class="str">&#39;It Works&#39;</span><span class="op">);</span>
+                </div><br />
+            <br />
+
+        <span class="topic" id="SeeAlso">See Also</span><a class="TOP" href="#TOP">&nbsp;&nbsp;</a><hr />
+            <ul class="UL">
+                <li><span class="title" id="seeAlso_core"><a href="core.htm">core</a></span><a class="TOP" href="#TOP">&nbsp;&nbsp;</a>
+                    <ul class="UL">
+                        <li><span class="title"><a href="core_cout_sout.htm">cout</a></span></li>
+                    </ul>
+                </li>
+                <li><span class="title" id="seeAlso_general">General</span><a class="TOP" href="#TOP">&nbsp;&nbsp;</a>
+                    <ul class="UL">
+                        <li><span class="title"><a href="Contents.htm">Contents</a></span></li>
+                    </ul>
+                </li>
+            </ul>
+
+    </div>
+    </body>
+</html>
